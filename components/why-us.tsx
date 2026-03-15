@@ -33,18 +33,18 @@ const advantages = [
 
 export function WhyUs() {
   return (
-    <section id="why-us" className="relative py-28 md:py-36 overflow-hidden">
+    <section id="why-us" className="relative pb-28 md:pb-36 overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <p className="text-sm font-medium text-primary mb-4 uppercase tracking-wider">
+        <div className="max-w-3xl mb-20 text-center m-auto">
+          <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">
             Why HashiraDevs
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance leading-tight">
             Built different. Delivered better.
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed text-pretty">

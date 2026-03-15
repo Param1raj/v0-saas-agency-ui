@@ -81,24 +81,42 @@ export function Contact() {
 
     setFormState("submitting")
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Formspree configuration - Replace with your form endpoint
+      const formspreeEndpoint = `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_FREE_ID}` // Get from Formspree
 
-    // Simulate success (in production, handle actual API response)
-    const success = Math.random() > 0.1 // 90% success rate for demo
-    
-    if (success) {
-      setFormState("success")
-      setFormData({
-        fullName: "",
-        email: "",
-        company: "",
-        projectType: "",
-        budgetRange: "",
-        timeline: "",
-        message: "",
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          company: formData.company,
+          projectType: formData.projectType,
+          budgetRange: formData.budgetRange,
+          timeline: formData.timeline,
+          message: formData.message,
+        }),
       })
-    } else {
+
+      if (response.ok) {
+        setFormState("success")
+        setFormData({
+          fullName: "",
+          email: "",
+          company: "",
+          projectType: "",
+          budgetRange: "",
+          timeline: "",
+          message: "",
+        })
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
       setFormState("error")
     }
   }
@@ -152,7 +170,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-28 md:py-36">
+    <section id="contact" className="absolute py-28 md:py-10">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

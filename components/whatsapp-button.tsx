@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils"
 
 export function WhatsAppButton() {
-  const phoneNumber = "1234567890" // Replace with actual WhatsApp number
+  const phoneNumber = "+917818869663" // Replace with actual WhatsApp number
   const message = encodeURIComponent("Hi HashiraDevs, I want to discuss a project.")
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
 

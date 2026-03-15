@@ -2,9 +2,14 @@
 
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ContactSheet } from "./contact-sheet"
+import { useState } from "react"
 
 export function CTA() {
-  return (
+  const [open, setOpen] = useState(false);
+
+  return (<>
     <section id="contact" className="relative py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Background glow */}
@@ -28,20 +33,25 @@ export function CTA() {
             <Button 
               size="lg" 
               className="group bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-base font-medium transition-all duration-300"
+              onClick={() => setOpen(true)}
             >
               Start a Conversation
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 transition-all duration-300"
-            >
-              Schedule a Call
-            </Button>
+            <Link href="/contact" >
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 transition-all duration-300"
+              >
+                Schedule a Call
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
+    <ContactSheet open={open} handleClose={() => setOpen(false)} />
+  </>
   )
 }

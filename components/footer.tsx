@@ -4,10 +4,10 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 const footerLinks = {
   company: [
-    { label: "About", href: "#about" },
-    { label: "Careers", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Press", href: "#" },
+    { label: "About", href: "/about" },
+    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/blog" },
+    { label: "Press", href: "/press" },
   ],
   services: [
     { label: "Web Development", href: "#services" },
@@ -17,16 +17,16 @@ const footerLinks = {
   ],
   resources: [
     { label: "Documentation", href: "#" },
-    { label: "Case Studies", href: "#work" },
+    { label: "Case Studies", href: "/portfolio" },
     { label: "Insights", href: "#" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ],
 }
 
-const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+const socialLinks:any[] = [
+  // { icon: Twitter, href: "#", label: "Twitter" },
+  // { icon: Github, href: "#", label: "GitHub" },
+  // { icon: Linkedin, href: "#", label: "LinkedIn" },
 ]
 
 export function Footer() {

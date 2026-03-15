@@ -1,13 +1,23 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ArrowRight, Target, Eye, Award, Zap, Users, Shield, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import type { Metadata } from 'next'
+import Script from 'next/script'
 
-export const metadata = {
-  title: "About | HashiraDevs - Elite Software Development Agency",
-  description: "Learn about HashiraDevs - an elite engineering-focused development agency delivering premium software solutions for visionary businesses worldwide.",
+export const metadata: Metadata = {
+  title: 'About HashiraDevs | Elite Software Development Agency | Our Story & Expertise',
+  description: 'Learn about HashiraDevs - an elite engineering-focused development agency with 5+ years of experience delivering premium software solutions for visionary businesses worldwide.',
+  keywords: ['about software development agency', 'HashiraDevs story', 'elite developers', 'senior engineering', 'software development expertise', 'company values', 'development team', 'quality software', 'performance-first development'],
+  openGraph: {
+    title: 'About HashiraDevs | Elite Software Development Agency',
+    description: 'Learn about HashiraDevs - an elite engineering-focused development agency delivering premium software solutions.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About HashiraDevs | Elite Software Development Agency',
+    description: 'Learn about HashiraDevs - an elite engineering-focused development agency.',
+  },
 }
 
 const values = [
@@ -35,7 +45,7 @@ const values = [
 
 const stats = [
   { value: "10+", label: "Years of Experience" },
-  { value: "150+", label: "Projects Delivered" },
+  { value: "50+", label: "Projects Delivered" },
   { value: "50+", label: "Happy Clients" },
   { value: "15+", label: "Industries Served" },
 ]
@@ -53,9 +63,32 @@ const industries = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-      
+    <>
+      <Script
+        id="breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hashiradevs.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://hashiradevs.com/about"
+              }
+            ]
+          })
+        }}
+      />
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-background" />
@@ -131,8 +164,8 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 md:py-28 bg-secondary/20">
-        <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <section className="py-20 md:py-28 bg-secondary/20 relative">
+        <div className="absolute left-0 top-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -315,9 +348,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-      <WhatsAppButton />
     </main>
+    </>
   )
 }

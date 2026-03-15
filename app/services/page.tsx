@@ -1,5 +1,3 @@
-"use client"
-
 import { 
   Globe, 
   Smartphone, 
@@ -14,9 +12,24 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import Script from 'next/script'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Software Development Services | HashiraDevs | Web, Mobile & SaaS Solutions',
+  description: 'Expert software development services including custom web applications, mobile apps, SaaS platforms, UI/UX design, cloud architecture, and API development. Senior-level engineering for scalable solutions.',
+  keywords: ['web development services', 'mobile app development', 'SaaS development', 'custom software development', 'UI/UX design', 'cloud architecture', 'API development', 'full-stack development', 'enterprise software', 'scalable applications'],
+  openGraph: {
+    title: 'Software Development Services | HashiraDevs',
+    description: 'Expert software development services for web, mobile, and SaaS applications. Senior engineering for scalable, high-performance solutions.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Software Development Services | HashiraDevs',
+    description: 'Expert software development services for web, mobile, and SaaS applications.',
+  },
+}
 
 const services = [
   {
@@ -130,9 +143,32 @@ const comparisonData = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-      
+    <>
+      <Script
+        id="breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hashiradevs.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://hashiradevs.com/services"
+              }
+            ]
+          })
+        }}
+      />
+      <main className="min-h-screen bg-background">      
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         {/* Background effects */}
@@ -353,9 +389,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-      <WhatsAppButton />
     </main>
+    </>
   )
 }

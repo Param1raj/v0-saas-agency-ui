@@ -295,8 +295,6 @@ export default function ProcessPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }

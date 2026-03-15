@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -127,25 +128,48 @@ export function Hero() {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <Button 
-            size="lg" 
-            className="group relative bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-base font-medium transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
-          >
-            <span className="relative z-10 flex items-center">
-              Start a Project
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </span>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300"
-          >
+          <Link href="/contact" >
+            <Button 
+              size="lg" 
+              className="group relative bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-base font-medium transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
+            >
+              <span className="relative z-10 flex items-center">
+                Start a Project
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Button>
+          </Link>
+          <Link href="/portfolio" >
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 hover:border-primary/50 transition-all duration-300"
+            >
             View Portfolio
           </Button>
+          </Link>
         </div>
         
         {/* Trust indicator */}
+        <div className="flex flex-wrap items-center justify-center gap-8 mb-12 text-sm text-muted-foreground/70">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+            <span>10+ Years Experience</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <span>50+ Projects Completed</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+            <span>98% Client Satisfaction</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+        
         <p className="text-sm text-muted-foreground/70 tracking-wide">
           Trusted by startups and growing businesses worldwide
         </p>

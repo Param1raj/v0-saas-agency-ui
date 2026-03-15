@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow crawling of CSS and JS for better rendering
+Allow: /_next/static/css/
+Allow: /_next/static/js/
+
+# Sitemap
+Sitemap: https://hashiradevs.com/sitemap.xml

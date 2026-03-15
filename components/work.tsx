@@ -117,13 +117,13 @@ export function Work() {
                 </div>
 
                 {/* View Case Study Link */}
-                <a
-                  href="#"
+                {/* <a
+                  href="#work"
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
                 >
                   View Case Study
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-                </a>
+                </a> */}
               </div>
 
               {/* Top edge glow on hover */}

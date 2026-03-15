@@ -174,8 +174,6 @@ export default function PortfolioPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
-      
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         {/* Background effects */}
@@ -270,8 +268,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }
