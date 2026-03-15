@@ -4,8 +4,10 @@ import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
 import { Work } from "@/components/work"
 import { Testimonials } from "@/components/testimonials"
+import { Contact } from "@/components/contact"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
@@ -16,8 +18,10 @@ export default function Home() {
       <WhyUs />
       <Work />
       <Testimonials />
+      <Contact />
       <CTA />
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }
