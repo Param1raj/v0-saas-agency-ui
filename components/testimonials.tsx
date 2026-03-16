@@ -5,20 +5,20 @@ import { Quote } from "lucide-react"
 const testimonials = [
   {
     quote: "HashiraDevs transformed our vision into a product that exceeded every expectation. Their technical expertise and attention to detail are unmatched.",
-    author: "Sarah Chen",
-    role: "CEO, Zenith Finance",
+    author: "Manish Kumar",
+    role: "CEO, MoneyRoots",
     avatar: "SC",
   },
   {
     quote: "Working with HashiraDevs was a game-changer. They delivered a complex healthcare platform in record time without compromising on quality.",
-    author: "Marcus Rodriguez",
-    role: "CTO, Pulse Health",
+    author: "Abhiskek Sharma",
+    role: "CTO, Chainese Garden",
     avatar: "MR",
   },
   {
     quote: "The team's ability to understand our business needs and translate them into elegant technical solutions is remarkable.",
-    author: "Emily Watson",
-    role: "Founder, Nova Commerce",
+    author: "Nitesh Kumar",
+    role: "Founder, Dholera Real Estates",
     avatar: "EW",
   },
 ]
