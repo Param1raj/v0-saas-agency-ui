@@ -5,26 +5,29 @@ import { cn } from "@/lib/utils"
 
 const projects = [
   {
-    title: "Zenith Finance Platform",
-    description: "A next-generation banking dashboard handling $2B+ in transactions annually. Built for speed, security, and seamless user experience.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "AWS"],
-    gradient: "from-blue-600/20 via-cyan-500/10 to-transparent",
-    accentColor: "group-hover:shadow-blue-500/20",
+    title: "Developer Portfolio Website",
+    description: "A sleek single-page portfolio showcasing projects, skills, and a contact section with smooth scrolling and responsive design.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    gradient: "from-sky-600/20 via-indigo-500/10 to-transparent",
+    accentColor: "group-hover:shadow-sky-500/20",
+    link: "https://param1raj.github.io/"
   },
   {
-    title: "Pulse Health SaaS",
-    description: "AI-powered health monitoring platform serving 500k+ patients. Real-time analytics, HIPAA-compliant infrastructure, and intuitive dashboards.",
-    technologies: ["React", "Node.js", "MongoDB", "TensorFlow", "GCP"],
+    title: "E‑Learning Platform",
+    description: "A video-streaming and uploading platform with course management, user progress tracking, and secure authentication.",
+    technologies: ["React", "Node.js", "Firebase", "Stripe"],
     gradient: "from-emerald-600/20 via-teal-500/10 to-transparent",
     accentColor: "group-hover:shadow-emerald-500/20",
+    link:"https://www.moneyroots.in/"
   },
   {
-    title: "Nova Commerce Engine",
-    description: "Headless e-commerce solution processing 1M+ orders monthly. Lightning-fast checkout, inventory management, and omnichannel support.",
-    technologies: ["Vue.js", "GraphQL", "Redis", "Elasticsearch", "Docker"],
+    title: "Real Estate Landing Page",
+    description: "A single-page website for property listings with interactive search filters, map integration, and lead capture.",
+    technologies: ["Next.js", "Mapbox", "Sanity CMS", "Tailwind CSS"],
     gradient: "from-violet-600/20 via-purple-500/10 to-transparent",
     accentColor: "group-hover:shadow-violet-500/20",
-  },
+    link:"https://www.moneyroots.in/dholera"
+  }
 ]
 
 export function Work() {
@@ -117,13 +120,15 @@ export function Work() {
                 </div>
 
                 {/* View Case Study Link */}
-                {/* <a
-                  href="#work"
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
                 >
                   View Case Study
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-                </a> */}
+                </a>
               </div>
 
               {/* Top edge glow on hover */}

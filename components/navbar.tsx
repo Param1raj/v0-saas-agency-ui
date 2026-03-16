@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes"
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -17,10 +18,26 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathName = usePathname();
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
+  const currentTheme = theme === "system" ? resolvedTheme : theme ?? "light";
+
+  // Add a border only after the user scrolls down (and remove it at the top)
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(currentTheme === "light" ? "dark" : "light");
+  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md ${isScrolled ? "border-b border-border" : ""}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -44,6 +61,15 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              className="p-2"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </Button>
           </div>
 
           {/* Desktop CTA */}
@@ -87,6 +113,16 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleTheme}
+            className="w-full justify-start p-2"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? <Moon className="w-4 h-4 mr-2" /> : <Sun className="w-4 h-4 mr-2" />}
+            {theme === "light" ? "Dark Mode" : "Light Mode"}
+          </Button>
           <Button 
             size="sm" 
             className="w-full bg-foreground text-background hover:bg-foreground/90 font-medium mt-4"

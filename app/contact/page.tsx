@@ -388,53 +388,53 @@ export default function ContactPage() {
                   <div className="space-y-5">
                     {/* Email */}
                     <a 
-                      href="mailto:hello@hashiradevs.com"
-                      className="flex items-start gap-4 group"
+                      href="mailto:hashiradevelopers@hashiradevs.com"
+                      className="flex items-center gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-secondary/80 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
                         <Mail className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground mb-0.5">Email</p>
-                        <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                        <p className="text-sm text-muted-foreground">Email</p>
+                        {/* <p className="text-foreground font-medium group-hover:text-primary transition-colors">
                           hello@hashiradevs.com
-                        </p>
+                        </p> */}
                       </div>
                     </a>
 
                     {/* LinkedIn */}
                     <a 
-                      href="https://linkedin.com/company/hashiradevs"
+                      href="https://linkedin.com/hashiradevs"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-4 group"
+                      className="flex items-center gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-secondary/80 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
                         <Linkedin className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground mb-0.5">LinkedIn</p>
-                        <p className="text-foreground font-medium group-hover:text-primary transition-colors">
-                          /company/hashiradevs
-                        </p>
+                        {/* <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                          /hashiradevs
+                        </p> */}
                       </div>
                     </a>
 
                     {/* WhatsApp */}
                     <a 
-                      href="https://wa.me/1234567890?text=Hi%20HashiraDevs%2C%20I%20want%20to%20discuss%20a%20project."
+                      href="https://wa.me/+917818869663?text=Hi%20HashiraDevs%2C%20I%20want%20to%20discuss%20a%20project."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-4 group"
+                      className="flex items-center gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-secondary/80 flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/15 transition-colors">
                         <MessageCircle className="w-5 h-5 text-[#25D366]" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground mb-0.5">WhatsApp</p>
-                        <p className="text-foreground font-medium group-hover:text-[#25D366] transition-colors">
+                        {/* <p className="text-foreground font-medium group-hover:text-[#25D366] transition-colors">
                           Chat with us
-                        </p>
+                        </p> */}
                       </div>
                     </a>
                   </div>

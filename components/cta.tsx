@@ -42,7 +42,7 @@ export function CTA() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 transition-all duration-300"
+                className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 hover:border-primary/50 hover:text-primary transition-all duration-300"
               >
                 Schedule a Call
               </Button>

@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { Footer } from '@/components/footer';
 import Script from 'next/script'
+import { ThemeProvider } from '@/components/theme-provider';
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -106,11 +107,13 @@ export default function RootLayout({
             })
           }}
         />
-        <Navbar />
-        {children}
-        <Analytics />
-        <Footer />
-        <WhatsAppButton />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Analytics />
+          <Footer />
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   )
