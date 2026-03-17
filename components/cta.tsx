@@ -13,7 +13,7 @@ export function CTA() {
     <section id="contact" className="relative py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">

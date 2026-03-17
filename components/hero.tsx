@@ -7,6 +7,7 @@ import Link from "next/link"
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -20,7 +21,7 @@ export function Hero() {
 
     const resize = () => {
       canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      canvas.height = sectionRef.current?.offsetHeight || window.innerHeight;
     }
 
     const draw = () => {
@@ -81,7 +82,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pb-4 md: pb-0">
       {/* Background */}
       <div className="absolute inset-0 bg-background" />
       
@@ -92,7 +93,7 @@ export function Hero() {
       />
       
       {/* Subtle glow effects */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-150 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
       
       {/* Grid pattern overlay */}
       <div 
