@@ -1,11 +1,4 @@
-import { Hero } from "@/components/hero"
-import { Services } from "@/components/services"
-import { WhyUs } from "@/components/why-us"
-import { Work } from "@/components/work"
-import { Testimonials } from "@/components/testimonials"
-import { FAQ } from "@/components/faq"
-import { Contact } from "@/components/contact"
-import { CTA } from "@/components/cta"
+import { HomeShell } from "@/components/home-shell"
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
@@ -148,16 +141,7 @@ export default function Home() {
           })
         }}
       />
-      <main className="min-h-screen bg-background">
-      <Hero />
-      <Services />
-      <WhyUs />
-      <Work />
-      <Testimonials />
-      {/* <FAQ /> */}
-      <CTA />
-      {/* <Contact /> */}
-    </main>
+      <HomeShell />
     </>
   )
 }
