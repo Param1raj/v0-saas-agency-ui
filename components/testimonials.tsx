@@ -4,22 +4,22 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   {
-    quote: "HashiraDevs transformed our vision into a product that exceeded every expectation. Their technical expertise and attention to detail are unmatched.",
+    quote: "HashiraDevs made the entire process smooth and stress-free. They understood exactly what we needed and delivered a clean, fast website that we’re proud to share.",
     author: "Manish Kumar",
-    role: "CEO, MoneyRoots",
-    avatar: "SC",
+    role: "Founder, MoneyRoots",
+    avatar: "MK",
   },
   {
-    quote: "Working with HashiraDevs was a game-changer. They delivered a complex healthcare platform in record time without compromising on quality.",
+    quote: "We needed a reliable team to build a complex platform, and HashiraDevs delivered on time without unnecessary delays. Communication was clear throughout the project.",
     author: "Abhiskek Sharma",
-    role: "CTO, Chainese Garden",
-    avatar: "MR",
+    role: "Founder, Chinese Garden",
+    avatar: "AS",
   },
   {
-    quote: "The team's ability to understand our business needs and translate them into elegant technical solutions is remarkable.",
+    quote: "What impressed us most was how they turned our ideas into a functional product without unnecessary complexity. The collaboration was smooth, and the final outcome was exactly what we needed.",
     author: "Nitesh Kumar",
     role: "Founder, Dholera Real Estates",
-    avatar: "EW",
+    avatar: "NK",
   },
 ]
 
@@ -33,7 +33,7 @@ export function Testimonials() {
             Client Stories
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Trusted by industry leaders
+            What Clients Say
           </h2>
         </div>
 
