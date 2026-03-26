@@ -5,7 +5,20 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'HashiraDevs | Premium Software Development Agency | Custom Web & Mobile Apps',
   description: 'Elite software development agency specializing in custom web applications, mobile apps, and SaaS platforms. Trusted by startups and enterprises worldwide. Get a free consultation today.',
-  keywords: ['software development', 'web development', 'SaaS', 'mobile app development', 'custom software', 'Next.js development', 'React development', 'full-stack development', 'API development', 'cloud solutions', 'DevOps', 'UI/UX design', 'enterprise software', 'startup development', 'digital transformation'],
+  keywords: [
+    'software development', 
+    'web development', 
+    'SaaS', 
+    'mobile app development', 
+    'custom software', 
+    'Next.js development', 
+    'React development', 
+    'full-stack development', 
+    'software development agency in Moradabad', 
+    'hire Next.js developers', 
+    'enterprise software', 
+    'startup development'
+  ],
   openGraph: {
     title: 'HashiraDevs | Premium Software Development Agency',
     description: 'Elite software development agency crafting world-class digital experiences. We build scalable, high-performance applications for global enterprises.',

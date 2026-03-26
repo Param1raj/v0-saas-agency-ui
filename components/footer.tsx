@@ -1,13 +1,14 @@
 "use client"
 
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { AtSign, Github, Linkedin, Mail, Phone, Twitter } from "lucide-react"
 
 const footerLinks = {
   company: [
     { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Blog", href: "/blog" },
-    { label: "Press", href: "/press" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Process", href: "/process" },
+    { label: "Contact", href: "/contact" },
   ],
   services: [
     { label: "Web Development", href: "#services" },
@@ -15,11 +16,9 @@ const footerLinks = {
     { label: "Cloud Architecture", href: "#services" },
     { label: "UI/UX Design", href: "#services" },
   ],
-  resources: [
-    { label: "Documentation", href: "#" },
-    { label: "Case Studies", href: "/portfolio" },
-    { label: "Insights", href: "#" },
-    { label: "Contact", href: "/contact" },
+  contact: [
+    { label: "+91 7818869663",  icon: <Phone className="w-4 h-4" /> },
+    { label: "hashiradevs@hashiradevs.com",  icon: <AtSign className=""/> },
   ],
 }
 
@@ -96,16 +95,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-medium text-foreground mb-4">Resources</h4>
+            <h4 className="font-medium text-foreground mb-4">Contact</h4>
             <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
+              {footerLinks.contact.map((link) => (
+                <li key={`${link.label} `} className="flex gap-2 items-center">
+                  {link.icon}
+                  <p
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </p>
                 </li>
               ))}
             </ul>
