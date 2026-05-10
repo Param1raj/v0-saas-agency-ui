@@ -24,7 +24,7 @@ export default function PortfolioPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         {/* Background effects */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-[400px] bg-primary/8 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -85,7 +85,7 @@ export default function PortfolioPage() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         
         {/* Glow effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-[500px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">

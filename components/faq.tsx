@@ -12,7 +12,7 @@ import { faqIntro, faqItems } from "@/components/site-data"
 export function FAQ() {
   return (
     <section className="relative py-24 md:py-32">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-200 h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">

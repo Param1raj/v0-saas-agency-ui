@@ -32,7 +32,7 @@ export function Navbar() {
         isScrolled && "border-b border-border"
       )}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="sm:max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">

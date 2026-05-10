@@ -116,7 +116,7 @@ function ProcessStep({
       {/* Step content */}
       <div 
         className={cn(
-          "relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-12 lg:py-20",
+          "relative flex flex-wrap-reverse sm:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-12 lg:py-20",
           "transition-all duration-700 ease-out",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}
@@ -225,7 +225,7 @@ export default function ProcessPage() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-150 h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -240,7 +240,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Process Timeline */}
-      <section className="relative py-12 md:py-20">
+      <section className="relative py-4 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           {processSteps.map((step, index) => (
             <div
@@ -261,7 +261,7 @@ export default function ProcessPage() {
       <section className="relative py-24 md:py-32">
         {/* Background glow */}
         <div className="absolute inset-0 bg-secondary/30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-150 h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
