@@ -1,24 +1,20 @@
 "use client"
 
-import { MessageCircle } from "lucide-react"
+import { cn } from "@/lib/utils"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { cn } from "@/lib/utils"
+import { siteConfig } from "@/components/site-data"
 
 export function WhatsAppButton() {
-  const phoneNumber = "+917818869663" // Replace with actual WhatsApp number
-  const message = encodeURIComponent("Hi HashiraDevs, I want to discuss a project.")
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
-
   return (
-    <div className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
+    <div className="fixed bottom-22 right-6 z-50 md:bottom-8 md:right-8">
       <Tooltip>
         <TooltipTrigger asChild>
           <a
-            href={whatsappUrl}
+            href={siteConfig.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
@@ -29,7 +25,6 @@ export function WhatsAppButton() {
               "hover:scale-105 active:scale-95"
             )}
           >
-            {/* WhatsApp Icon */}
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
