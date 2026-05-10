@@ -143,7 +143,7 @@ export function Contact() {
   if (formState === "success") {
     return (
       <section id="contact" className="relative py-28 md:py-36">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-150 h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <div className="p-12 rounded-2xl border border-border/60 bg-card/30 backdrop-blur-sm">
@@ -172,7 +172,7 @@ export function Contact() {
   return (
     <section id="contact" className="absolute py-28 md:py-10">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-200 h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6">

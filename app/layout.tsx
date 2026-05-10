@@ -10,6 +10,7 @@ import { Navbar } from '@/components/navbar'
 import { siteConfig, localBusinessDescription, organizationServices } from '@/components/site-data'
 import { ThemeProvider } from '@/components/theme-provider'
 import { WhatsAppButton } from '@/components/whatsapp-button'
+import { MobileCtaBar } from '@/components/mobile-cta-bar'
 
 const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
@@ -96,7 +97,8 @@ export default function RootLayout({
           {children}
           <Analytics />
           <Footer />
-          <WhatsAppButton />
+          {/* <WhatsAppButton /> */}
+          <MobileCtaBar />
         </ThemeProvider>
       </body>
     </html>

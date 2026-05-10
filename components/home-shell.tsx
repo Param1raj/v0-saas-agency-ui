@@ -21,7 +21,6 @@ export function HomeShell() {
       <Testimonials />
       <FAQ />
       <CTA />
-      <MobileCtaBar />
     </main>
   )
 }

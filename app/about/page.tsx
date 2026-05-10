@@ -183,10 +183,10 @@ export default function AboutPage() {
           <div className="absolute top-1/3 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
           <div className="relative mx-auto max-w-[850px] px-6 text-center">
-            <h1 className="mb-6 md:text-[28px] font-bold text-foreground text-balance">
-              We help local businesses build a stronger online presence that earns trust and drives growth.
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
+            About HashiraDevs
+          </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
               HashiraDevs combines conversion-focused websites, local SEO, and practical business strategy
               so more of your online traffic turns into calls, bookings, and real conversations.
             </p>
