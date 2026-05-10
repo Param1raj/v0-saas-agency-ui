@@ -28,7 +28,6 @@ export function Hero() {
 
     let animationId: number
     let time = 0
-    console.log('window', window);
     const resize = () => {
       canvas.width = window.screen.width
       canvas.height = sectionRef.current?.offsetHeight || window.screen.height
@@ -105,7 +104,7 @@ export function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <div className="hidden sm:flex mb-8 md:mb-12">
+        <div className="hidden sm:block mb-8 md:mb-12">
           <span className="text-2xl md:text-3xl font-semibold tracking-wide bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             HashiraDevs
           </span>
