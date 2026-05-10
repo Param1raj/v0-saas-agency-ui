@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { HoverCard } from "./card/hover-card"
 
@@ -40,5 +40,5 @@ export function WhyUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

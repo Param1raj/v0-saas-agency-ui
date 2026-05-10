@@ -31,5 +31,5 @@ export function Work() {
         </div>
       </div>
     </section>
-  )
+  );
 }
