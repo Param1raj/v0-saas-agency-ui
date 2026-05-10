@@ -40,7 +40,7 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
               {project.description}
             </p>
-            <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
@@ -67,7 +67,7 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <div className="rounded-xl border border-border overflow-hidden">
               <div className="h-72 md:h-96">
                 <Image
-                  className="rounded-md h-full w-full object-cover"
+                  className="rounded-md h-full w-full object-contain sm:object-cover"
                   src={project.images?.[0]}
                   alt={project.title}
                   width={450}
@@ -181,7 +181,7 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
                         <Image
                             src={image}
                             alt={`${project.title} image - ${i + 1}`}
-                            className="object-cover h-full w-full"
+                            className="object-contain sm:object-cover h-full w-full"
                             width={200}
                             height={200}
                         />
@@ -228,13 +228,13 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   Start a Project
                 </span>
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="px-8 py-6 text-base font-medium border-border bg-transparent hover:bg-secondary/50 hover:border-primary/50 hover:text-primary transition-all duration-300"
               >
                 Chat on WhatsApp
-              </Button>
+              </Button> */}
             </div>
           </ScrollReveal>
         </div>

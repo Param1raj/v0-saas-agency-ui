@@ -10,7 +10,7 @@ import {
 
 export function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32">
+    <section id="services" className="relative pt-15 pb-24 md:py-32">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-150 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
