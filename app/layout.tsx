@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 
@@ -9,11 +9,12 @@ import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
 import { siteConfig, localBusinessDescription, organizationServices } from '@/components/site-data'
 import { ThemeProvider } from '@/components/theme-provider'
+import { LenisProvider } from '@/components/providers/lenis-provider'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { MobileCtaBar } from '@/components/mobile-cta-bar'
 
-const _geist = Geist({ subsets: ['latin'] })
-const _geistMono = Geist_Mono({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata: Metadata = {
   title: 'HashiraDevs | Local Business Website Development & SEO Services',
@@ -66,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <Script
           id="structured-data"
@@ -93,12 +94,14 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <Navbar />
-          {children}
-          <Analytics />
-          <Footer />
-          {/* <WhatsAppButton /> */}
-          <MobileCtaBar />
+          <LenisProvider>
+            <Navbar />
+            {children}
+            <Analytics />
+            <Footer />
+            {/* <WhatsAppButton /> */}
+            <MobileCtaBar />
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>
