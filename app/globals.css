@@ -93,3 +93,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes cta-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); box-shadow: 0 0 25px rgba(99, 102, 241, 0.15); }
+}
+
+.cta-pop-effect {
+  animation: cta-pop 4s infinite ease-in-out;
+}

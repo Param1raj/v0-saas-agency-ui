@@ -336,6 +336,8 @@ export function Contact() {
             <Button
               type="submit"
               size="lg"
+              shimmer={true}
+              pop={true}
               disabled={formState === "submitting"}
               className="w-full h-14 bg-foreground text-background hover:bg-foreground/90 text-base font-medium transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)] disabled:opacity-70"
             >
