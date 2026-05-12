@@ -91,6 +91,7 @@ export function Navbar() {
                   <Link href="/contact">
                     <Button
                       size="default"
+                      pop={true}
                       className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-medium px-6 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300"
                     >
                       Book Consultation
@@ -162,6 +163,7 @@ export function Navbar() {
               <Link href="/contact" onClick={() => setIsOpen(false)}>
                 <Button
                   size="lg"
+                  pop={true}
                   className="w-full rounded-full bg-brand-indigo hover:bg-brand-indigo/90 text-white font-medium py-6 text-lg shadow-[0_0_30px_rgba(99,102,241,0.3)]"
                 >
                   Book Consultation

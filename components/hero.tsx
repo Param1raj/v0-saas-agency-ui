@@ -7,6 +7,8 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { MagneticButton } from "@/components/ui/magnetic-button"
+import { TypingAnimation } from "@/components/ui/typing-animation"
+import { CountUp } from "@/components/ui/count-up"
 
 const trustChips = [
   "SEO Ready",
@@ -113,6 +115,7 @@ export function Hero() {
                 <Link href="/contact" className="block w-full">
                   <Button
                     size="lg"
+                    pop={true}
                     className="w-full group relative bg-foreground text-background hover:bg-foreground/90 px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
                   >
                     <span className="relative z-10 flex items-center">
@@ -200,14 +203,18 @@ export function Hero() {
                         <TrendingUp className="w-4 h-4 text-brand-cyan" />
                         <span className="text-sm">Conversion Rate</span>
                       </div>
-                      <div className="text-3xl font-bold text-foreground">8.4%</div>
+                      <div className="text-3xl font-bold text-foreground">
+                        <CountUp to={8.4} decimals={1} suffix="%" duration={2.5} />
+                      </div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-4 border border-white/5">
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <Search className="w-4 h-4 text-brand-violet" />
                         <span className="text-sm">Organic Traffic</span>
                       </div>
-                      <div className="text-3xl font-bold text-foreground">+142%</div>
+                      <div className="text-3xl font-bold text-foreground">
+                        <CountUp to={142} prefix="+" suffix="%" duration={2.5} />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -252,7 +259,9 @@ export function Hero() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <div className="absolute text-xl font-bold text-green-500">99</div>
+                  <div className="absolute text-xl font-bold text-green-500">
+                    <CountUp to={99} duration={1.5} />
+                  </div>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium text-foreground">
                   <Zap className="w-3 h-3 text-yellow-500" fill="currentColor" />

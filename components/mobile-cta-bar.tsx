@@ -24,7 +24,7 @@ export function MobileCtaBar() {
         >
           <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
           <MessageCircle className="w-5 h-5" />
-          <span className="text-sm font-bold tracking-wide">WhatsApp Us</span>
+          <span className="text-sm font-bold tracking-wide">WhatsApp</span>
         </a>
         
         <a

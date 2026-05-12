@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { CaseStudies } from "@/constants/config"
 import { ProjectCard } from "@/components/card/project-card"
+import { TypingAnimation } from "@/components/ui/typing-animation"
 
 const categories = ["All", "Web", "Mobile", "SaaS", "E-commerce"] as const
 type Category = (typeof categories)[number]
@@ -28,7 +29,7 @@ export default function PortfolioPage() {
         
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-            Our Work
+            <TypingAnimation text="Our Work" />
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
             A showcase of projects we have built for ambitious companies. 
@@ -98,6 +99,7 @@ export default function PortfolioPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg"
+              shimmer={true}
               className="group bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-base font-medium transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
             >
               <span className="flex items-center">

@@ -11,8 +11,9 @@ import {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary/30 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="dark border-t border-border bg-[#0f172a] dark:bg-background relative pt-24 pb-12">
+      <div className="absolute inset-0 bg-secondary/30 pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24">
           
           {/* Brand Column */}

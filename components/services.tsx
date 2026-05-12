@@ -2,6 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion"
 import { useState } from "react"
+import { CountUp } from "@/components/ui/count-up"
 
 /* ─────────────────────────────────────────────
    MINI VISUAL PREVIEWS  (inline SVG / JSX)
@@ -127,7 +128,9 @@ function GoogleBizPreview() {
 
         {/* Stars + reviews */}
         <div className="flex items-center gap-1">
-          <span className="text-[10px] font-bold text-orange-400">4.9</span>
+          <span className="text-[10px] font-bold text-orange-400">
+            <CountUp to={4.9} decimals={1} duration={1.5} />
+          </span>
           <div className="flex">
             {[1,2,3,4,5].map(s => (
               <span key={s} className="text-yellow-400 text-[10px]">★</span>
@@ -326,7 +329,7 @@ const services = [
     id: "web-dev",
     title: "Website Development",
     tagline: "Built to convert visitors into customers",
-    metric: "3×",
+    metric: <CountUp to={3} suffix="×" />,
     metricLabel: "faster load time",
     accent: "#6366f1",
     accentGlow: "rgba(99,102,241,0.15)",
@@ -350,7 +353,7 @@ const services = [
     id: "google-biz",
     title: "Google Business",
     tagline: "Turn your profile into a lead machine",
-    metric: "+140%",
+    metric: <CountUp to={140} prefix="+" suffix="%" />,
     metricLabel: "profile views",
     accent: "#f97316",
     accentGlow: "rgba(249,115,22,0.15)",
@@ -375,7 +378,7 @@ const services = [
     id: "conversion",
     title: "Conversion Optimisation",
     tagline: "More bookings from the traffic you already have",
-    metric: "+48%",
+    metric: <CountUp to={48} prefix="+" suffix="%" />,
     metricLabel: "conversion rate",
     accent: "#ec4899",
     accentGlow: "rgba(236,72,153,0.15)",
@@ -387,7 +390,7 @@ const services = [
     id: "redesign",
     title: "Website Redesign",
     tagline: "From outdated to unforgettable in days",
-    metric: "100%",
+    metric: <CountUp to={100} suffix="%" />,
     metricLabel: "premium aesthetic",
     accent: "#a855f7",
     accentGlow: "rgba(168,85,247,0.15)",

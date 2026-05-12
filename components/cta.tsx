@@ -82,6 +82,7 @@ export function CTA() {
             <MagneticButton>
               <Button
                 size="lg"
+                shimmer={true}
                 className="group bg-foreground text-background hover:bg-foreground/90 px-10 py-8 text-xl font-medium rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] transition-all duration-300"
                 onClick={() => setOpen(true)}
               >

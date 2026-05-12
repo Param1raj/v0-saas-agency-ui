@@ -1,12 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { CountUp } from "@/components/ui/count-up"
 
 const metrics = [
-  { value: "40+", label: "Businesses Helped" },
-  { value: "92+", label: "Lighthouse Scores" },
-  { value: "3x", label: "Faster Websites" },
-  { value: "100%", label: "Focus on Growth" }
+  { value: 40, prefix: "", suffix: "+", label: "Businesses Helped" },
+  { value: 92, prefix: "", suffix: "+", label: "Lighthouse Scores" },
+  { value: 3, prefix: "", suffix: "x", label: "Faster Websites" },
+  { value: 100, prefix: "", suffix: "%", label: "Focus on Growth" }
 ]
 
 const logos = [
@@ -34,7 +35,7 @@ export function TrustStrip() {
               className="flex flex-col items-center justify-center"
             >
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent mb-2">
-                {metric.value}
+                <CountUp to={metric.value} prefix={metric.prefix} suffix={metric.suffix} />
               </div>
               <div className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
                 {metric.label}
