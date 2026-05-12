@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Search, Lightbulb, PenTool, Code, LineChart, Rocket, RefreshCcw } from "lucide-react"
+import Image from "next/image"
 
 const steps = [
   { id: "01", title: "Audit", description: "Deep dive into your current online presence.", icon: Search },

@@ -39,7 +39,7 @@ export function Hero() {
   if (!mounted) return <div className="min-h-screen bg-background" />
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
+    <section className="relative min-h-screen pt-32 pb-36 md:pb-20 overflow-hidden flex items-center">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-background" />
       
@@ -108,12 +108,12 @@ export function Hero() {
               We design and build high-converting websites designed to generate leads, rank on Google, and automate your WhatsApp inquiries.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-12 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full">
               <MagneticButton className="w-full sm:w-auto">
                 <Link href="/contact" className="block w-full">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto group relative bg-foreground text-background hover:bg-foreground/90 px-8 py-7 text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
+                    className="w-full group relative bg-foreground text-background hover:bg-foreground/90 px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
                   >
                     <span className="relative z-10 flex items-center">
                       Book Free Consultation
@@ -127,14 +127,14 @@ export function Hero() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto px-8 py-7 text-lg font-medium border-border bg-transparent hover:bg-white/5 transition-all duration-300 rounded-2xl"
+                  className="w-full px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium border-border bg-transparent hover:bg-white/5 transition-all duration-300 rounded-2xl"
                 >
                   View Projects
                 </Button>
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="grid grid-cols-2 gap-y-3 gap-x-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3 w-full">
               {trustChips.map((chip, i) => (
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
@@ -220,7 +220,7 @@ export function Hero() {
                   y: mousePosition.y * 40 + Math.sin(Date.now() / 1000) * 10,
                 }}
                 transition={{ type: "spring", stiffness: 40, damping: 20 }}
-                className="absolute top-1/2 -left-10 bg-card/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex items-center gap-4 shadow-xl z-20"
+                className="absolute top-[14%] -left-10 bg-card/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex items-center gap-4 shadow-xl z-20"
               >
                 <div className="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center">
                   <MessageSquare className="w-6 h-6 text-[#25D366]" fill="#25D366" />

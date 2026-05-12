@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
+import Image from "next/image"
 
 import { ContactSheet } from "./contact-sheet"
 import { Button } from "@/components/ui/button"
@@ -15,8 +16,9 @@ export function CTA() {
   return (
     <>
       <section id="contact" className="relative py-32 overflow-hidden bg-background">
-        {/* Immersive Gradient Mesh Background */}
+        {/* Atmospheric Background Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Animated overlay orbs */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-indigo/10 rounded-full blur-[150px]" />
           <motion.div 
             animate={{ 

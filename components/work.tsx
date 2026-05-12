@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { ArrowUpRight, Clock, Users, Zap, Search } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { projectItems } from "./site-data"
+import { ProjectCard } from "./card/project-card"
 
 const caseStudies = [
   {
@@ -87,55 +89,56 @@ export function Work() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {caseStudies.map((study, index) => (
-            <motion.div
-              key={study.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="group relative rounded-3xl bg-card/40 border border-border/50 shadow-sm overflow-hidden hover:border-primary/50 transition-colors"
-            >
-              {/* Image Container with Hover Zoom */}
-              <div className="relative h-64 overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-t ${study.color} mix-blend-multiply opacity-60 z-10`} />
-                <Image 
-                  src={study.image} 
-                  alt={study.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="px-3 py-1 rounded-full bg-background/80 backdrop-blur-md text-xs font-medium border border-border/50">
-                    {study.category}
-                  </span>
-                </div>
-              </div>
+          {projectItems.map(project => (
+            <ProjectCard key={project.title} {...{...project, images:project.ss} } />
+            // <motion.div
+            //   key={study.title}
+            //   initial={{ opacity: 0, y: 30 }}
+            //   whileInView={{ opacity: 1, y: 0 }}
+            //   viewport={{ once: true, margin: "-100px" }}
+            //   className="group relative rounded-3xl bg-card/40 border border-border/50 shadow-sm overflow-hidden hover:border-primary/50 transition-colors"
+            // >
+            //   {/* Image Container with Hover Zoom */}
+            //   <div className="relative h-64 overflow-hidden">
+            //     <div className={`absolute inset-0 bg-gradient-to-t ${study.color} mix-blend-multiply opacity-60 z-10`} />
+            //     <Image 
+            //       src={study.image} 
+            //       alt={study.title}
+            //       fill
+            //       className="object-cover transition-transform duration-700 group-hover:scale-110"
+            //     />
+            //     <div className="absolute top-4 left-4 z-20">
+            //       <span className="px-3 py-1 rounded-full bg-background/80 backdrop-blur-md text-xs font-medium border border-border/50">
+            //         {study.category}
+            //       </span>
+            //     </div>
+            //   </div>
 
-              <div className="p-8 relative z-20 bg-background/50 backdrop-blur-xl">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-brand-indigo transition-colors">
-                  {study.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {study.description}
-                </p>
+            //   <div className="p-8 relative z-20 bg-background/50 backdrop-blur-xl">
+            //     <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-brand-indigo transition-colors">
+            //       {study.title}
+            //     </h3>
+            //     <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            //       {study.description}
+            //     </p>
 
-                {/* KPI Metrics */}
-                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-border/50">
-                  {study.metrics.map((metric, i) => {
-                    const MetricIcon = metric.icon
-                    return (
-                      <div key={i} className="flex flex-col">
-                        <div className="flex items-center gap-2 mb-1">
-                          <MetricIcon className={`w-4 h-4 ${metric.color}`} />
-                          <span className="text-2xl font-bold text-foreground">{metric.value}</span>
-                        </div>
-                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{metric.label}</span>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </motion.div>
+            //     {/* KPI Metrics */}
+            //     {/* <div className="grid grid-cols-2 gap-4 pt-6 border-t border-border/50">
+            //       {study.metrics.map((metric, i) => {
+            //         const MetricIcon = metric.icon
+            //         return (
+            //           <div key={i} className="flex flex-col">
+            //             <div className="flex items-center gap-2 mb-1">
+            //               <MetricIcon className={`w-4 h-4 ${metric.color}`} />
+            //               <span className="text-2xl font-bold text-foreground">{metric.value}</span>
+            //             </div>
+            //             <span className="text-xs text-muted-foreground uppercase tracking-wider">{metric.label}</span>
+            //           </div>
+            //         )
+            //       })}
+            //     </div> */}
+            //   </div>
+            // </motion.div>
           ))}
         </div>
       </div>
