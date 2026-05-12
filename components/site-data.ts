@@ -200,6 +200,20 @@ export const testimonialItems = [
     role: "Founder, Dholera Real Estates",
     avatar: "NK",
   },
+  {
+    quote:
+      "They helped us simplify the user journey and improve how visitors contact us. The end result feels polished and professional.",
+    author: "Abhishek Sharma",
+    role: "Founder, Chinese Garden",
+    avatar: "AS",
+  },
+  {
+    quote:
+      "What stood out most was their ability to turn business goals into a website experience that feels clean, modern, and practical.",
+    author: "Nitesh Kumar",
+    role: "Founder, Dholera Real Estates",
+    avatar: "NK",
+  }
 ]
 
 export const faqItems = [
