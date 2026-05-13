@@ -7,7 +7,7 @@ import './globals.css'
 
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
-import { siteConfig, localBusinessDescription, organizationServices } from '@/components/site-data'
+import { siteConfig, localBusinessDescription, organizationServices, geoAreasServed, organizationSameAs } from '@/components/site-data'
 import { ThemeProvider } from '@/components/theme-provider'
 import { LenisProvider } from '@/components/providers/lenis-provider'
 import { WhatsAppButton } from '@/components/whatsapp-button'
@@ -17,15 +17,20 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata: Metadata = {
-  title: 'HashiraDevs | Local Business Website Development & SEO Services',
+  title: 'Local Business Growth Websites & SEO Services | HashiraDevs',
   description: localBusinessDescription,
   keywords: [
     'local business website development',
     'local SEO services',
-    'website redesign',
-    'Google Business optimization',
-    'WhatsApp automation',
-    'Moradabad web development agency',
+    'local business growth',
+    'Google Business Profile optimization',
+    'Google Maps optimization',
+    'WhatsApp lead system',
+    'customer acquisition',
+    'website redesign for local businesses',
+    'Moradabad web development',
+    'Delhi NCR local SEO',
+    'Noida website design',
   ],
   authors: [{ name: 'HashiraDevs' }],
   creator: 'HashiraDevs',
@@ -40,16 +45,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'HashiraDevs | Local Business Website Development & SEO Services',
+    title: 'Local Business Growth Websites & SEO Services | HashiraDevs',
     description: localBusinessDescription,
     url: siteConfig.domain,
     siteName: 'HashiraDevs',
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HashiraDevs | Local Business Website Development & SEO Services',
+    title: 'Local Business Growth Websites & SEO Services | HashiraDevs',
     description: localBusinessDescription,
   },
   icons: {
@@ -59,6 +64,89 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    'geo.region': 'IN-UP',
+    'geo.placename': 'Moradabad, Uttar Pradesh',
+    'geo.position': '28.8386;78.7733',
+    'ICBM': '28.8386, 78.7733',
+  },
+}
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': `${siteConfig.domain}/#organization`,
+  name: 'HashiraDevs',
+  url: siteConfig.domain,
+  logo: `${siteConfig.domain}/icon.svg`,
+  image: `${siteConfig.domain}/icon.svg`,
+  description: localBusinessDescription,
+  telephone: siteConfig.phoneDisplay,
+  email: siteConfig.email,
+  priceRange: '₹₹',
+  openingHours: 'Mo-Sa 09:00-19:00',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Prabhat Market',
+    addressLocality: 'Moradabad',
+    addressRegion: 'Uttar Pradesh',
+    postalCode: '244001',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 28.8386,
+    longitude: 78.7733,
+  },
+  areaServed: geoAreasServed.map((city) => ({
+    '@type': 'City',
+    name: city,
+  })),
+  sameAs: organizationSameAs,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Local Business Growth Services',
+    itemListElement: organizationServices.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: service,
+      },
+    })),
+  },
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteConfig.domain}/#website`,
+  url: siteConfig.domain,
+  name: 'HashiraDevs',
+  description: 'Local business growth websites, SEO, and customer acquisition systems.',
+  publisher: {
+    '@id': `${siteConfig.domain}/#organization`,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteConfig.domain}/?s={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteConfig.domain,
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -70,28 +158,19 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <Script
-          id="structured-data"
+          id="local-business-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              name: 'HashiraDevs',
-              url: siteConfig.domain,
-              logo: `${siteConfig.domain}/icon.svg`,
-              description: localBusinessDescription,
-              telephone: siteConfig.phoneDisplay,
-              email: siteConfig.email,
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Moradabad',
-                addressRegion: 'Uttar Pradesh',
-                addressCountry: 'IN',
-              },
-              areaServed: 'India',
-              serviceType: organizationServices,
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <ThemeProvider>
           <LenisProvider>

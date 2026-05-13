@@ -5,8 +5,8 @@ import { HomeShell } from '@/components/home-shell'
 import { faqItems, localBusinessDescription } from '@/components/site-data'
 
 export const metadata: Metadata = {
-  title: 'HashiraDevs | High-Converting Websites & Local SEO for Local Businesses',
-  description: localBusinessDescription,
+  title: 'Local Business Growth Websites & SEO Services | HashiraDevs',
+  description: 'HashiraDevs helps local businesses grow through high-converting websites, local SEO, Google Maps optimization, and customer acquisition systems.',
 }
 
 export default function Home() {

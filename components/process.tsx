@@ -6,13 +6,13 @@ import { Search, Lightbulb, PenTool, Code, LineChart, Rocket, RefreshCcw } from 
 import Image from "next/image"
 
 const steps = [
-  { id: "01", title: "Audit", description: "Deep dive into your current online presence.", icon: Search },
-  { id: "02", title: "Strategy", description: "Blueprint for your conversion machine.", icon: Lightbulb },
-  { id: "03", title: "Design", description: "Crafting a premium, trust-building UI.", icon: PenTool },
-  { id: "04", title: "Development", description: "Building with Next.js for maximum speed.", icon: Code },
-  { id: "05", title: "SEO Setup", description: "Optimizing for local search dominance.", icon: LineChart },
-  { id: "06", title: "Launch", description: "Going live and configuring analytics.", icon: Rocket },
-  { id: "07", title: "Optimization", description: "Continuous A/B testing and growth.", icon: RefreshCcw }
+  { id: "01", title: "Audit", description: "We analyse your current online presence and identify what's costing you customers.", icon: Search },
+  { id: "02", title: "Strategy", description: "A clear growth plan — covering SEO, conversion, and lead capture — tailored to your business.", icon: Lightbulb },
+  { id: "03", title: "Design", description: "A premium, trust-building website that makes the right first impression every time.", icon: PenTool },
+  { id: "04", title: "Build", description: "Fast, mobile-first development optimised for speed, conversions, and local search.", icon: Code },
+  { id: "05", title: "SEO Setup", description: "Local SEO structure, Google Maps optimisation, and metadata set up to attract nearby customers.", icon: LineChart },
+  { id: "06", title: "Launch", description: "We go live, connect your analytics, and set up WhatsApp and inquiry tracking.", icon: Rocket },
+  { id: "07", title: "Growth", description: "Ongoing improvements to visibility, conversions, and lead flow as your business grows.", icon: RefreshCcw }
 ]
 
 export function Process() {

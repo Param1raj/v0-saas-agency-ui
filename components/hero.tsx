@@ -11,10 +11,10 @@ import { TypingAnimation } from "@/components/ui/typing-animation"
 import { CountUp } from "@/components/ui/count-up"
 
 const trustChips = [
-  "SEO Ready",
+  "Local SEO Ready",
   "Mobile Optimized",
-  "Fast Loading",
-  "WhatsApp Integrated"
+  "WhatsApp Integrated",
+  "Conversion Focused"
 ]
 
 export function Hero() {
@@ -96,18 +96,18 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-indigo opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-indigo"></span>
               </span>
-              <span className="text-sm font-medium tracking-wide">Premium Agency</span>
+              <span className="text-sm font-medium tracking-wide">Local Business Growth Partner</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-              Websites That Turn Local Businesses Into
+              We Help Local Businesses Get More
               <span className="block mt-2 bg-gradient-to-r from-brand-indigo via-brand-violet to-brand-cyan bg-clip-text text-transparent">
-                Growth Machines
+                Calls, Customers & Bookings
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
-              We design and build high-converting websites designed to generate leads, rank on Google, and automate your WhatsApp inquiries.
+              We build high-converting websites, Google visibility systems, and WhatsApp lead funnels designed to help local businesses grow revenue — not just look modern online.
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full">
@@ -119,7 +119,7 @@ export function Hero() {
                     className="w-full group relative bg-foreground text-background hover:bg-foreground/90 px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
                   >
                     <span className="relative z-10 flex items-center">
-                      Book Free Consultation
+                      Get Free Growth Audit
                       <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </span>
                   </Button>
@@ -132,7 +132,7 @@ export function Hero() {
                   size="lg"
                   className="w-full px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium border-border bg-transparent hover:bg-white/5 transition-all duration-300 rounded-2xl"
                 >
-                  View Projects
+                  See How We Help Businesses Grow
                 </Button>
               </Link>
             </div>
@@ -234,7 +234,7 @@ export function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">New Inquiry</div>
-                  <div className="text-xs text-muted-foreground">"Hi, I need a website..."</div>
+                  <div className="text-xs text-muted-foreground">"Hi, I'd like to book a table for tonight"</div>
                 </div>
               </motion.div>
 

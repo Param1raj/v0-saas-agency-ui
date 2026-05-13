@@ -24,7 +24,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-8 text-pretty">
-              Premium web experiences and digital growth systems for modern local businesses.
+              Helping Local Businesses Grow Through Strategic Websites, Local SEO &amp; Digital Growth Systems.
             </p>
             <div className="flex gap-4">
                <a 

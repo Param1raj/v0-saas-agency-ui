@@ -11,27 +11,8 @@ import {
 import { faqIntro, faqItems } from "@/components/site-data"
 
 export function FAQ() {
-  // Generate JSON-LD schema for FAQs
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map((item) => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  }
-
   return (
     <section id="faq" className="relative py-24 md:py-32 bg-background border-t border-border">
-      {/* Inject FAQ Schema for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-cyan/5 rounded-full blur-[150px] pointer-events-none" />
 

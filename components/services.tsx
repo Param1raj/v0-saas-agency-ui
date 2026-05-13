@@ -327,8 +327,8 @@ function RedesignPreview() {
 const services = [
   {
     id: "web-dev",
-    title: "Website Development",
-    tagline: "Built to convert visitors into customers",
+    title: "Customer-Generating Websites",
+    tagline: "Built to turn visitors into calls, bookings, and paying customers",
     metric: <CountUp to={3} suffix="×" />,
     metricLabel: "faster load time",
     accent: "#6366f1",
@@ -340,7 +340,7 @@ const services = [
   {
     id: "local-seo",
     title: "Local SEO",
-    tagline: "Rank #1 when customers search near you",
+    tagline: "Get found by nearby customers already searching for you",
     metric: "Top 3",
     metricLabel: "map pack",
     accent: "#06b6d4",
@@ -351,8 +351,8 @@ const services = [
   },
   {
     id: "google-biz",
-    title: "Google Business",
-    tagline: "Turn your profile into a lead machine",
+    title: "Google Maps Visibility",
+    tagline: "Dominate local searches and turn profile views into inquiries",
     metric: <CountUp to={140} prefix="+" suffix="%" />,
     metricLabel: "profile views",
     accent: "#f97316",
@@ -363,8 +363,8 @@ const services = [
   },
   {
     id: "whatsapp",
-    title: "WhatsApp Automation",
-    tagline: "Respond to every lead — even at 3am",
+    title: "Automated Lead Follow-Up",
+    tagline: "Capture and respond to every inquiry — even at 3am",
     metric: "24/7",
     metricLabel: "lead capture",
     accent: "#22c55e",
@@ -376,8 +376,8 @@ const services = [
   },
   {
     id: "conversion",
-    title: "Conversion Optimisation",
-    tagline: "More bookings from the traffic you already have",
+    title: "Website Conversion Improvement",
+    tagline: "More bookings and inquiries from the traffic you already have",
     metric: <CountUp to={48} prefix="+" suffix="%" />,
     metricLabel: "conversion rate",
     accent: "#ec4899",
@@ -389,7 +389,7 @@ const services = [
   {
     id: "redesign",
     title: "Website Redesign",
-    tagline: "From outdated to unforgettable in days",
+    tagline: "Build instant trust and drive more action from day one",
     metric: <CountUp to={100} suffix="%" />,
     metricLabel: "premium aesthetic",
     accent: "#a855f7",
@@ -567,7 +567,7 @@ export function Services() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            <span className="text-sm font-medium tracking-wide">What We Do</span>
+            <span className="text-sm font-medium tracking-wide">Growth Systems</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -576,11 +576,11 @@ export function Services() {
             transition={{ delay: 0.08 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight tracking-tight"
           >
-            Services that{" "}
+            Growth Systems{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              actually grow
+              Designed for
             </span>{" "}
-            your business
+            Local Businesses
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -589,7 +589,7 @@ export function Services() {
             transition={{ delay: 0.14 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Everything a local business needs to get found, get clicked, and get booked — all under one roof.
+            Everything a local business needs to get found on Google, capture more leads, and turn website visitors into paying customers.
           </motion.p>
         </div>
 

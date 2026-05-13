@@ -66,8 +66,8 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight"
             >
-              Real Results for <br/>
-              <span className="text-muted-foreground">Real Businesses.</span>
+              Proven Growth for <br/>
+              <span className="text-muted-foreground">Local Businesses.</span>
             </motion.h2>
           </div>
           

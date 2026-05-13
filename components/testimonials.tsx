@@ -38,7 +38,7 @@ export function Testimonials() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan mb-6"
           >
-            <span className="text-sm font-medium tracking-wide">Client Success</span>
+            <span className="text-sm font-medium tracking-wide">What Business Owners Say</span>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
