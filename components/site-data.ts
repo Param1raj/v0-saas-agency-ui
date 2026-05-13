@@ -19,7 +19,7 @@ export const siteConfig = {
   whatsappUrl:
     "https://wa.me/+917818869663?text=Hi%20HashiraDevs%2C%20I%20want%20help%20growing%20my%20business%20online.",
   email: "hashiradevs@hashiradevs.com",
-  location: "Moradabad, Uttar Pradesh, India",
+  location: "Prabhat market, moradabad, 244001",
 } as const
 
 export const navLinks = [
@@ -31,16 +31,16 @@ export const navLinks = [
 ]
 
 export const heroHeadline =
-  "Websites That Help Local Businesses Get More Calls, Customers & Bookings"
+  "We Help Local Businesses Get More Calls, Customers & Bookings"
 
 export const heroSubheadline =
-  "We help local businesses grow with high-converting websites, local SEO, and WhatsApp-ready customer journeys."
+  "We build high-converting websites, Google visibility systems, and WhatsApp lead funnels designed to help local businesses grow revenue — not just look modern online."
 
 export const heroTrustItems = [
-  "SEO Ready",
+  "Local SEO Ready",
   "Mobile Optimized",
-  "Fast Loading",
   "WhatsApp Integrated",
+  "Conversion Focused",
 ]
 
 export const heroStatHighlights = [
@@ -62,72 +62,72 @@ export const socialProofLine =
 export const serviceItems = [
   {
     icon: Globe,
-    title: "Website Development",
+    title: "Customer-Generating Websites",
     description:
-      "Modern websites designed to turn visitors into calls, bookings, and qualified leads.",
+      "Built to turn every visitor into a call, booking, or inquiry — not just a page view.",
   },
   {
     icon: Search,
     title: "Local SEO Services",
     description:
-      "Improve visibility for nearby customers searching for the services you already offer.",
+      "Get found by nearby customers who are already searching for what you offer.",
   },
   {
     icon: MapPinned,
-    title: "Google Business Optimization",
+    title: "Google Maps Visibility Optimization",
     description:
-      "Strengthen your Google presence so more local searches become profile visits and inquiries.",
+      "Dominate local Google searches so more profile views turn into real inquiries.",
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp Automation",
+    title: "Automated Lead Follow-Up Systems",
     description:
-      "Make it easier for prospects to message you instantly and move into your follow-up flow.",
+      "Capture and respond to every WhatsApp inquiry automatically — even after hours.",
   },
   {
     icon: Palette,
     title: "Website Redesign",
     description:
-      "Upgrade outdated websites into cleaner, faster experiences that build trust quickly.",
+      "Modernise your site so it builds instant trust and moves visitors toward action.",
   },
   {
     icon: Server,
-    title: "Conversion Optimization",
+    title: "Website Conversion Improvement",
     description:
-      "Refine page flow, CTA placement, and messaging so more traffic turns into real business.",
+      "Optimise layouts, CTAs, and messaging so more of your traffic becomes real revenue.",
   },
 ]
 
 export const advantageItems = [
   {
     icon: Award,
-    title: "Trust-First Positioning",
+    title: "Revenue-First Thinking",
     description:
-      "We structure your website so local customers understand your value quickly and feel confident reaching out.",
+      "Every decision we make is tied to one goal: getting your business more calls, bookings, and paying customers.",
   },
   {
     icon: Zap,
-    title: "Performance-First Delivery",
+    title: "Speed That Keeps Customers",
     description:
-      "Fast-loading pages and better mobile UX help reduce drop-off and improve lead quality.",
+      "Fast-loading, mobile-optimised pages reduce drop-off and ensure every visitor stays long enough to convert.",
   },
   {
     icon: MessageCircle,
-    title: "Clear Communication",
+    title: "Always-On Lead Capture",
     description:
-      "You get direct updates, honest timelines, and a process that keeps decisions simple and transparent.",
+      "WhatsApp funnels and smart CTAs ensure no inquiry slips through — even outside business hours.",
   },
   {
     icon: Blocks,
-    title: "Scalable Foundations",
+    title: "Local SEO Built In",
     description:
-      "Your site is built to support future growth, better content, and stronger SEO without constant rework.",
+      "Your site and Google presence are structured to rank for the searches that bring you real local customers.",
   },
   {
     icon: LineChart,
-    title: "Growth-Focused Strategy",
+    title: "Growth Beyond Launch",
     description:
-      "We care about what happens after launch: more visibility, more inquiries, and more booked conversations.",
+      "We track visibility, inquiries, and conversion outcomes so your online presence keeps improving over time.",
   },
 ]
 
@@ -223,14 +223,14 @@ export const faqItems = [
       "Most business websites take around 3 to 6 weeks depending on scope, content readiness, and required integrations.",
   },
   {
-    question: "Do you provide local SEO services?",
+    question: "Will a new website actually help me get more customers?",
     answer:
-      "Yes. We help with on-page local SEO, service-page structure, metadata, and local visibility improvements.",
+      "Yes. We build websites specifically around conversion — clear calls to action, fast load times, local SEO, and WhatsApp integration — so more of your visitors turn into inquiries and bookings.",
   },
   {
-    question: "Can you redesign an existing website?",
+    question: "My current website isn't bringing in leads. Can you fix it?",
     answer:
-      "Yes. We regularly improve existing websites that need better trust, stronger conversions, and cleaner mobile UX.",
+      "Yes. We regularly improve existing websites to build stronger trust, drive more inquiries, and convert more of the traffic you're already getting.",
   },
   {
     question: "Do you optimize Google Business Profiles?",
@@ -250,33 +250,35 @@ export const faqItems = [
 ]
 
 export const footerServiceLinks = [
-  { label: "Website Development", href: "#services" },
+  { label: "Customer-Generating Websites", href: "#services" },
   { label: "Local SEO Services", href: "#services" },
-  { label: "Website Redesign", href: "#services" },
-  { label: "WhatsApp Automation", href: "#services" },
+  { label: "Google Maps Visibility", href: "#services" },
+  { label: "WhatsApp Lead Systems", href: "#services" },
 ]
 
 export const localBusinessDescription =
-  "HashiraDevs helps local businesses grow online with conversion-focused websites, local SEO services, website redesigns, Google Business optimization, and WhatsApp automation."
+  "HashiraDevs helps local businesses grow online with customer-generating websites, local SEO, Google Maps visibility, and WhatsApp lead systems — built to drive real revenue, not just online presence."
 
 export const organizationServices = [
-  "Website Development",
+  "Customer-Generating Websites",
   "Local SEO Services",
-  "Website Redesign",
-  "Google Business Optimization",
-  "WhatsApp Automation",
+  "Google Maps Visibility Optimization",
+  "Automated WhatsApp Lead Systems",
+  "Website Conversion Improvement",
 ]
 
-export const servicesHeadline = "Services focused on visibility, trust, and conversions"
+export const servicesHeadline = "Growth Systems Designed for Local Businesses"
 export const servicesIntro =
-  "Strategic website and growth services tailored for businesses that want more visibility, more trust, and more customer action."
+  "Everything a local business needs to get found on Google, capture more leads, and turn website visitors into paying customers."
 export const whyUsHeadline = "Built to help businesses grow, not just look good"
 export const whyUsIntro =
-  "We combine strong design execution with practical growth strategy so your website looks better and performs better."
+  "We combine strong design with practical growth strategy so your website not only looks premium — it generates calls, bookings, and revenue."
 export const workIntro =
-  "Selected projects that show how stronger positioning, faster UX, and clearer conversion paths create better business outcomes."
+  "Real businesses. Real outcomes. See how stronger positioning, local SEO, and conversion-focused websites drive measurable growth."
 export const faqIntro =
-  "Answers to the questions local businesses ask before starting a website or SEO project."
-export const ctaHeadline = "Ready to grow your business online?"
+  "Common questions from local business owners before starting a website or growth project."
+export const ctaHeadline = "Ready to Get More Customers From Your Online Presence?"
 export const ctaDescription =
-  "Let’s improve how your business looks online, how customers find you, and how more visitors turn into inquiries."
+  "Let's find what's stopping your business from growing online and build a system that brings you more calls, bookings, and visibility."
+export const footerTagline =
+  "Helping Local Businesses Grow Through Strategic Websites, Local SEO & Digital Growth Systems."

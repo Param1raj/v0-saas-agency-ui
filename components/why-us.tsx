@@ -9,8 +9,8 @@ import { MagneticButton } from "@/components/ui/magnetic-button"
 
 const painPoints = [
   {
-    title: "Slow Loading Times",
-    description: "Customers leave if a site takes more than 3 seconds to load.",
+    title: "Customers Leave Before Contacting You",
+    description: "Visitors make up their mind in seconds. A slow or confusing site sends them straight to a competitor.",
     icon: Snail,
     color: "text-red-400",
     bg: "bg-red-400/10",
@@ -20,8 +20,8 @@ const painPoints = [
     statLabel: "of users abandon slow sites"
   },
   {
-    title: "Poor Google Visibility",
-    description: "If you aren't on page one, your competitors get the customers.",
+    title: "Your Business Barely Appears on Google",
+    description: "If you're not on page one or in the Map Pack, competitors are getting the calls that should be yours.",
     icon: EyeOff,
     color: "text-orange-400",
     bg: "bg-orange-400/10",
@@ -31,8 +31,8 @@ const painPoints = [
     statLabel: "never scroll past page 1"
   },
   {
-    title: "Weak Mobile Experience",
-    description: "80% of local searches happen on phones. Your site must adapt.",
+    title: "Mobile Visitors Drop Off Quickly",
+    description: "80% of local searches happen on phones. If your site isn't built for mobile, you're losing most of your traffic.",
     icon: Smartphone,
     color: "text-yellow-400",
     bg: "bg-yellow-400/10",
@@ -42,8 +42,8 @@ const painPoints = [
     statLabel: "searches from mobile"
   },
   {
-    title: "No WhatsApp Funnel",
-    description: "Missing out on instant messaging leads and direct bookings.",
+    title: "Leads Are Lost Without Follow-Up",
+    description: "Without WhatsApp integration or automated responses, most inquiries go cold before you ever reply.",
     icon: MessageCircleOff,
     color: "text-green-400",
     bg: "bg-green-400/10",
@@ -53,8 +53,8 @@ const painPoints = [
     statLabel: "WhatsApp active users"
   },
   {
-    title: "Low Trust Design",
-    description: "Outdated aesthetics make your business look unprofessional.",
+    title: "Competitors Look More Trustworthy Online",
+    description: "Outdated design signals low credibility. Customers choose who they trust — and trust is built in 0.05 seconds.",
     icon: ShieldAlert,
     color: "text-purple-400",
     bg: "bg-purple-400/10",
@@ -64,8 +64,8 @@ const painPoints = [
     statLabel: "to form a first impression"
   },
   {
-    title: "Poor Conversion Flow",
-    description: "Traffic means nothing if visitors don't become paying customers.",
+    title: "Your Website Fails to Convert Visitors",
+    description: "Traffic means nothing without conversion. Most visitors leave without ever calling, booking, or messaging.",
     icon: TrendingDown,
     color: "text-pink-400",
     bg: "bg-pink-400/10",
@@ -201,7 +201,7 @@ export function WhyUs() {
                 size="lg"
                 className="bg-brand-indigo text-white hover:bg-brand-indigo/90 px-8 py-7 text-lg font-medium rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300"
               >
-                Get Free Website Audit
+                Get Free Growth Audit
               </Button>
             </Link>
           </MagneticButton>

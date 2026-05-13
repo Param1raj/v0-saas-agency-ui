@@ -696,7 +696,7 @@ function Spotlight() {
               <div className="absolute inset-0 z-10 pointer-events-none border-[12px] border-card/20 dark:border-background/20" />
               
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110190.62772592078!2d77.92520698114175!3d30.337996324268156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c356c888af%3A0x4c35b56196aa961b!2sDehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1715531234567!5m2!1sen!2sin" 
+                src="https://maps.google.com/maps?q=Prabhat%20market,%20moradabad,%20244001&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -710,7 +710,7 @@ function Spotlight() {
                 <div className="bg-card/90 backdrop-blur-md border border-border/50 p-4 rounded-2xl shadow-xl max-w-xs transition-transform duration-500 group-hover:-translate-y-2">
                   <h4 className="font-bold text-foreground mb-1">Our Location</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Dehradun, Uttarakhand, India<br />
+                    Prabhat market, moradabad, 244001<br />
                     Available for global collaboration.
                   </p>
                 </div>

@@ -5,7 +5,7 @@ import { CountUp } from "@/components/ui/count-up"
 
 const metrics = [
   { value: 40, prefix: "", suffix: "+", label: "Businesses Helped" },
-  { value: 92, prefix: "", suffix: "+", label: "Lighthouse Scores" },
+  { value: 92, prefix: "", suffix: "+", label: "Site Speed Score" },
   { value: 3, prefix: "", suffix: "x", label: "Faster Websites" },
   { value: 100, prefix: "", suffix: "%", label: "Focus on Growth" }
 ]
