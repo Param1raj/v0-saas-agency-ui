@@ -218,34 +218,39 @@ export const testimonialItems = [
 
 export const faqItems = [
   {
-    question: "How long does a typical website project take?",
+    question: "How can local SEO help my business get more customers?",
     answer:
-      "Most business websites take around 3 to 6 weeks depending on scope, content readiness, and required integrations.",
-  },
-  {
-    question: "Will a new website actually help me get more customers?",
-    answer:
-      "Yes. We build websites specifically around conversion — clear calls to action, fast load times, local SEO, and WhatsApp integration — so more of your visitors turn into inquiries and bookings.",
-  },
-  {
-    question: "My current website isn't bringing in leads. Can you fix it?",
-    answer:
-      "Yes. We regularly improve existing websites to build stronger trust, drive more inquiries, and convert more of the traffic you're already getting.",
+      "Local SEO helps your business appear when nearby customers search for services you offer — on Google Search, Google Maps, and in the local pack. We structure your website and Google presence so you capture these high-intent searches and convert them into real calls, bookings, and walk-ins.",
   },
   {
     question: "Do you optimize Google Business Profiles?",
     answer:
-      "Yes. We can help improve your profile structure and how it connects with your website for better local positioning.",
+      "Yes. We improve your Google Business Profile structure and align it with your website so your business appears more prominently in Google Maps results and local searches. A well-optimized profile drives more profile views, direction requests, and direct calls.",
   },
   {
-    question: "Can you integrate WhatsApp into the website?",
+    question: "Can a website improve customer inquiries for my local business?",
     answer:
-      "Absolutely. We can add direct WhatsApp entry points and conversation-focused CTAs for faster lead capture.",
+      "Absolutely. We build websites with clear calls to action, WhatsApp entry points, click-to-call buttons, and local SEO foundations — so every visitor has a simple, frictionless path to becoming a customer inquiry.",
   },
   {
-    question: "Do you offer support after launch?",
+    question: "How long does local SEO take to show results?",
     answer:
-      "Yes. We provide maintenance, improvements, and ongoing support after launch based on your needs.",
+      "Most local businesses start seeing measurable improvements in 30 to 90 days — better rankings, more profile views, and increased inquiries. The timeline depends on your market competition and starting position.",
+  },
+  {
+    question: "Do you build websites for restaurants, clinics, and salons?",
+    answer:
+      "Yes. We regularly build and improve websites for local service businesses including restaurants, clinics, salons, gyms, educational institutes, and repair services. Every site is built around your specific business goals and customer journey.",
+  },
+  {
+    question: "Why does mobile optimization matter for local businesses?",
+    answer:
+      "Over 80% of local searches happen on mobile devices. If your website is slow, hard to navigate, or not built for phones, you lose most of your potential customers before they ever contact you. We build every site to be fast and seamless on mobile from day one.",
+  },
+  {
+    question: "My current website isn't bringing in leads. Can you fix it?",
+    answer:
+      "Yes. We regularly audit and improve existing websites — tightening trust signals, improving CTAs, adding WhatsApp integration, and fixing the local SEO foundation — so more of the traffic you already get turns into real business inquiries.",
   },
 ]
 
@@ -257,14 +262,35 @@ export const footerServiceLinks = [
 ]
 
 export const localBusinessDescription =
-  "HashiraDevs helps local businesses grow online with customer-generating websites, local SEO, Google Maps visibility, and WhatsApp lead systems — built to drive real revenue, not just online presence."
+  "HashiraDevs is a local business growth company helping restaurants, clinics, salons, gyms, and service businesses across India grow through strategic websites, local SEO, Google Maps visibility optimization, and WhatsApp lead capture systems — built to drive real customer acquisition, not just online presence."
 
 export const organizationServices = [
-  "Customer-Generating Websites",
+  "Local Business Website Development",
   "Local SEO Services",
+  "Google Business Profile Optimization",
   "Google Maps Visibility Optimization",
-  "Automated WhatsApp Lead Systems",
-  "Website Conversion Improvement",
+  "WhatsApp Lead Capture Systems",
+  "Website Conversion Rate Optimization",
+  "Customer Acquisition Strategy",
+  "Mobile-Optimized Website Design",
+]
+
+export const geoAreasServed = [
+  "Moradabad",
+  "Delhi",
+  "Noida",
+  "Gurugram",
+  "Amroha",
+  "Bareilly",
+  "Lucknow",
+  "Meerut",
+  "Uttar Pradesh",
+  "Delhi NCR",
+]
+
+export const organizationSameAs = [
+  "https://wa.me/+917818869663",
+  "https://hashiradevs.com",
 ]
 
 export const servicesHeadline = "Growth Systems Designed for Local Businesses"
