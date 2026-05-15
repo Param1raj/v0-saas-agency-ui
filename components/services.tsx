@@ -414,7 +414,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       transition={{ delay: index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative rounded-3xl overflow-hidden border border-white/80 bg-[#0e0e1a]/80 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 ${
+      className={`relative rounded-3xl overflow-hidden border border-border bg-[#0e0e1a]/80 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 ${
         wide ? "flex flex-col md:flex-row" : "flex flex-col"
       } ${service.colSpan}`}
       style={{

@@ -256,13 +256,11 @@ function ConversionFunnelVisual() {
             d="M 50 5 L 200 65 L 200 135 L 50 195 Z" 
             fill="url(#funnel-grad-horizontal)" 
             opacity="0.4" 
-            filter="url(#glow-funnel-h)"
           />
           <motion.path 
             d="M 200 65 L 350 90 L 350 110 L 200 135 Z" 
             fill="url(#funnel-grad-horizontal)" 
             opacity="0.7" 
-            filter="url(#glow-funnel-h)"
           />
           
           {/* Outline */}
