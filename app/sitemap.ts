@@ -1,44 +1,24 @@
 import { MetadataRoute } from 'next'
+import { siteConfig, navLinks } from '@/components/site-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hashiradevs.com'
+  const baseUrl = siteConfig.domain
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/process`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
+  // Static routes from navigation
+  const routes = navLinks.map((link) => ({
+    url: `${baseUrl}${link.href}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // Add homepage
+  const home = {
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 1,
+  }
+
+  return [home, ...routes]
 }

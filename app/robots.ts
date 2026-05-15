@@ -1,14 +1,13 @@
-import type { MetadataRoute } from "next"
-
-import { siteConfig } from "@/components/site-data"
+import { MetadataRoute } from 'next'
+import { siteConfig } from '@/components/site-data'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: "*",
-      allow: "/",
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/private/', '/api/'],
     },
     sitemap: `${siteConfig.domain}/sitemap.xml`,
-    host: siteConfig.domain,
   }
 }

@@ -111,6 +111,7 @@ export function Navbar() {
                 size="icon"
                 onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
                 className="rounded-full text-muted-foreground"
+                aria-label="Toggle theme"
               >
                 {mounted && currentTheme === "light" ? <Moon className="w-5 h-5" /> : mounted ? <Sun className="w-5 h-5" /> : <div className="w-5 h-5" />}
               </Button>

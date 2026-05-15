@@ -99,15 +99,13 @@ export function Hero() {
           
           {/* LEFT SIDE: Copy & CTAs */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-start text-left"
           >
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
+              initial={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 text-brand-indigo mb-6"
             >
               <span className="relative flex h-2 w-2">
@@ -160,9 +158,8 @@ export function Hero() {
             <div className="grid grid-cols-2 gap-y-3 gap-x-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3 w-full">
               {trustChips.map((chip, i) => (
                 <motion.div
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.1 }}
+                  initial={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4 }}
                   key={chip} 
                   className="flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
                 >

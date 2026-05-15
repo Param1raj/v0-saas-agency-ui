@@ -80,6 +80,8 @@
   --color-brand-blue: #3B82F6;
   --color-brand-indigo: #6366F1;
   --color-brand-violet: #8B5CF6;
+  --color-brand-indigo-accessible: #4F46E5;
+  --color-brand-cyan-accessible: #0891B2;
 }
 
 @layer base {

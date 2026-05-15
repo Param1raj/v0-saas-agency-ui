@@ -13,8 +13,8 @@ import { LenisProvider } from '@/components/providers/lenis-provider'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { MobileCtaBar } from '@/components/mobile-cta-bar'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Local Business Growth Websites & SEO Services | HashiraDevs',
@@ -156,6 +156,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="font-sans antialiased">
         <Script
           id="local-business-schema"

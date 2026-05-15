@@ -275,23 +275,23 @@ function ConversionFunnelVisual() {
           />
 
           {/* Animated Particles (Visitors entering from left) */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <motion.circle 
               key={`visitor-h-${i}`}
               r="4" 
               fill="white"
-              initial={{ cx: -20, cy: 100 + (Math.random() * 190 - 95), opacity: 0 }}
+              initial={{ cx: -20, cy: 100 + (i * 30 - 45), opacity: 0 }}
               animate={{ 
                 cx: [0, 100, 200], 
-                cy: [100 + (Math.random() * 100 - 50), 100, 100], 
+                cy: [100 + (i * 10 - 15), 100, 100], 
                 opacity: [0, 0.4, 0] 
               }}
-              transition={{ duration: 3, repeat: Infinity, delay: i * 0.5, ease: "linear" }}
+              transition={{ duration: 3, repeat: Infinity, delay: i * 0.8, ease: "linear" }}
             />
           ))}
 
           {/* Leads (Stars exiting on right) */}
-          {[...Array(4)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <motion.path
               key={`lead-h-${i}`}
               d="M 0 -5 L 1 -1.5 L 5 -1.5 L 2 1 L 3 5 L 0 2.5 L -3 5 L -2 1 L -5 -1.5 L -1 -1.5 Z"
@@ -299,11 +299,11 @@ function ConversionFunnelVisual() {
               initial={{ x: 200, y: 100, scale: 0, opacity: 0 }}
               animate={{ 
                 x: [200, 300, 420], 
-                y: [100, 100 + (Math.random() * 20 - 10), 100 + (Math.random() * 40 - 20)], 
+                y: [100, 100 + (i * 10 - 10), 100 + (i * 20 - 20)], 
                 scale: [0, 1.2, 0.8], 
                 opacity: [0, 1, 0] 
               }}
-              transition={{ duration: 3.5, repeat: Infinity, delay: 1.5 + i * 0.9, ease: "easeOut" }}
+              transition={{ duration: 3.5, repeat: Infinity, delay: 1.5 + i * 1.1, ease: "easeOut" }}
             />
           ))}
         </svg>

@@ -5,10 +5,12 @@ import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Image from "next/image"
 
-import { ContactSheet } from "./contact-sheet"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { MagneticButton } from "@/components/ui/magnetic-button"
 import { siteConfig } from "@/components/site-data"
+
+const ContactSheet = dynamic(() => import("./contact-sheet").then(mod => mod.ContactSheet), { ssr: false })
 
 export function CTA() {
   const [open, setOpen] = useState(false)
