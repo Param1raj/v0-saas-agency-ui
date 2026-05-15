@@ -58,7 +58,8 @@ function Button({
       data-slot="button"
       className={cn(
         buttonVariants({ variant, size, className }),
-        pop && "cta-pop-effect"
+        pop && "cta-pop-effect",
+        shimmer && "shimmer-effect"
       )}
       {...props}
     />

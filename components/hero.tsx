@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
 import { ArrowRight, CheckCircle2, TrendingUp, Search, MessageSquare, Zap } from "lucide-react"
 import Link from "next/link"
 
@@ -18,24 +18,43 @@ const trustChips = [
 
 export function Hero() {
   const [mounted, setMounted] = useState(false)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  
+  // Use MotionValues for smooth, performant cursor follow
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  
+  // Create spring-smoothed versions of the mouse coordinates
+  const smoothMouseX = useSpring(mouseX, { stiffness: 50, damping: 20 })
+  const smoothMouseY = useSpring(mouseY, { stiffness: 50, damping: 20 })
+  
   const { scrollY } = useScroll()
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200])
-  const y2 = useTransform(scrollY, [0, 1000], [0, -100])
+  const scrollY1 = useTransform(scrollY, [0, 1000], [0, 200])
+  const scrollY2 = useTransform(scrollY, [0, 1000], [0, -100])
+
+  // Mouse transformation values
+  const cardX = useTransform(smoothMouseX, [-1, 1], [-20, 20])
+  const cardY = useTransform(smoothMouseY, [-1, 1], [-20, 20])
+  const cardRotateX = useTransform(smoothMouseY, [-1, 1], [5, -5])
+  const cardRotateY = useTransform(smoothMouseX, [-1, 1], [-5, 5])
+
+  const float1X = useTransform(smoothMouseX, [-1, 1], [-40, 40])
+  const float1Y = useTransform(smoothMouseY, [-1, 1], [-40, 40])
+  
+  const float2X = useTransform(smoothMouseX, [-1, 1], [30, -30])
+  const float2Y = useTransform(smoothMouseY, [-1, 1], [30, -30])
 
   useEffect(() => {
     setMounted(true)
     
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1
-      })
+      // Normalize values to -1 to 1 range
+      mouseX.set((e.clientX / window.innerWidth) * 2 - 1)
+      mouseY.set((e.clientY / window.innerHeight) * 2 - 1)
     }
     
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  }, [mouseX, mouseY])
 
   if (!mounted) return <div className="min-h-screen bg-background" />
 
@@ -111,29 +130,31 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full">
               <MagneticButton className="w-full sm:w-auto">
-                <Link href="/contact" className="block w-full">
-                  <Button
-                    size="lg"
-                    pop={true}
-                    className="w-full group relative bg-foreground text-background hover:bg-foreground/90 px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
-                  >
+                <Button
+                  asChild
+                  size="lg"
+                  pop={true}
+                  className="w-full group relative bg-foreground text-background hover:bg-foreground/90 px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] rounded-2xl"
+                >
+                  <Link href="/contact" className="block w-full">
                     <span className="relative z-10 flex items-center">
                       Get Free Growth Audit
                       <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </span>
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </MagneticButton>
               
-              <Link href="/portfolio" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium border-border bg-transparent hover:bg-white/5 transition-all duration-300 rounded-2xl"
-                >
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full px-6 py-6 sm:px-8 sm:py-7 text-base sm:text-lg font-medium border-border bg-transparent hover:bg-white/5 transition-all duration-300 rounded-2xl"
+              >
+                <Link href="/portfolio" className="w-full sm:w-auto">
                   See How We Help Businesses Grow
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             <div className="grid grid-cols-2 gap-y-3 gap-x-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3 w-full">
@@ -155,13 +176,23 @@ export function Hero() {
           {/* RIGHT SIDE: Interactive Visuals */}
           <div className="relative h-[600px] hidden lg:block perspective-1000">
             <motion.div 
-              style={{ y: y1 }}
+              style={{ y: scrollY1 }}
               className="absolute inset-0"
             >
               {/* Main Dashboard Card */}
               <motion.div
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1, x: mousePosition.x * 20, y: mousePosition.y * 20, rotateX: mousePosition.y * -5, rotateY: mousePosition.x * 5 }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1,
+                }}
+                style={{
+                  x: cardX,
+                  y: cardY,
+                  rotateX: cardRotateX,
+                  rotateY: cardRotateY,
+                }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                 className="absolute top-10 right-10 w-[450px] bg-card/80 backdrop-blur-2xl border border-border rounded-3xl p-6 shadow-2xl"
               >
@@ -218,8 +249,18 @@ export function Hero() {
               {/* Floating Element 1: WhatsApp Popup */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: mousePosition.x * 40, y: mousePosition.y * 40 + Math.sin(Date.now() / 1000) * 10 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                animate={{ 
+                  opacity: 1,
+                  y: [0, -10, 0]
+                }}
+                style={{
+                  x: float1X,
+                  y: float1Y,
+                }}
+                transition={{ 
+                  opacity: { delay: 0.5, duration: 0.8 },
+                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                }}
                 className="absolute top-[14%] -left-10 bg-card/90 backdrop-blur-xl border border-border rounded-2xl p-4 flex items-center gap-4 shadow-xl z-20"
               >
                 <div className="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center">
@@ -234,8 +275,20 @@ export function Hero() {
               {/* Floating Element 2: Performance Score */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1, x: mousePosition.x * -30, y: mousePosition.y * -30 + Math.cos(Date.now() / 1000) * 10 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  y: [0, 10, 0]
+                }}
+                style={{
+                  x: float2X,
+                  y: float2Y,
+                }}
+                transition={{ 
+                  opacity: { delay: 0.7, duration: 0.6 },
+                  scale: { delay: 0.7, duration: 0.6 },
+                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                }}
                 className="absolute bottom-20 right-0 bg-card/90 backdrop-blur-xl border border-border rounded-2xl p-5 flex flex-col items-center gap-2 shadow-xl z-20"
               >
                 <div className="relative flex items-center justify-center">
