@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { GoogleBizContent } from './google-business-content'
+import { GoogleBusinessContent as GoogleBizContent } from './google-business-content'
 
 export const metadata: Metadata = {
   title: 'Google Business Profile Optimization | Maps SEO | HashiraDevs',

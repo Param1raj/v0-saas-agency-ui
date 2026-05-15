@@ -8,7 +8,7 @@ import {
   Check, 
   ArrowRight,
   MessageSquare,
-  BarChart3
+  BarChart
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
