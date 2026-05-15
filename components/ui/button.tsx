@@ -42,11 +42,14 @@ function Button({
   size,
   asChild = false,
   pop = false,
+  shimmer,
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
     pop?: boolean
+  } & {
+    shimmer?: boolean
   }) {
   const Comp = asChild ? Slot : 'button'
 

@@ -228,57 +228,82 @@ function VisionVisual() {
 
 function ConversionFunnelVisual() {
   return (
-    <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl border border-border/50 bg-[#0e0e1a] dark:bg-[#0e0e1a] p-6 overflow-hidden flex flex-col justify-between shadow-2xl">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,#818cf820_0%,transparent_100%)]" />
+    <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl border border-border bg-[#0c0c18] p-6 overflow-hidden flex flex-col justify-between shadow-2xl">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(139,92,246,0.1)_0%,transparent_100%)]" />
 
-      
       {/* Top labels */}
       <div className="relative z-10 flex justify-between items-start w-full">
-        <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Traffic</div>
-        <div className="text-xs font-mono text-emerald-400/80 uppercase tracking-wider">Qualified Leads</div>
+        <div className="text-xs font-mono text-white/40 uppercase tracking-wider">Traffic</div>
+        <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Qualified Leads</div>
       </div>
 
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
+        <svg viewBox="0 0 400 200" className="w-[60%] h-full overflow-visible">
           <defs>
-            <linearGradient id="funnel-grad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#818cf8" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#c084fc" stopOpacity="0.5" />
+            <linearGradient id="funnel-grad-horizontal" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#6366f1" stopOpacity="0.6" />
               <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
             </linearGradient>
-            <filter id="glow-funnel" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="8" result="blur" />
+            <filter id="glow-funnel-h" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
               <feComposite in="SourceGraphic" in2="blur" operator="over" />
             </filter>
           </defs>
 
-          {/* Funnel structure */}
-          <path d="M 100 40 L 200 80 L 200 120 L 100 160 Z" fill="url(#funnel-grad)" opacity="0.3" filter="url(#glow-funnel)" />
-          <path d="M 200 80 L 300 95 L 300 105 L 200 120 Z" fill="url(#funnel-grad)" opacity="0.5" filter="url(#glow-funnel)" />
-          <path d="M 100 40 L 200 80 M 100 160 L 200 120 M 200 80 L 300 95 M 200 120 L 300 105" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+          {/* Funnel structure - Horizontal as per image */}
+          <motion.path 
+            d="M 50 5 L 200 65 L 200 135 L 50 195 Z" 
+            fill="url(#funnel-grad-horizontal)" 
+            opacity="0.4" 
+            filter="url(#glow-funnel-h)"
+          />
+          <motion.path 
+            d="M 200 65 L 350 90 L 350 110 L 200 135 Z" 
+            fill="url(#funnel-grad-horizontal)" 
+            opacity="0.7" 
+            filter="url(#glow-funnel-h)"
+          />
+          
+          {/* Outline */}
+          <path 
+            d="M 50 5 L 200 65 L 350 90 M 50 195 L 200 135 L 350 110" 
+            stroke="white" 
+            strokeOpacity="0.1" 
+            strokeWidth="1" 
+            fill="none" 
+          />
 
-          {/* Animated Particles (Visitors -> Leads) */}
-          {[...Array(5)].map((_, i) => (
+          {/* Animated Particles (Visitors entering from left) */}
+          {[...Array(6)].map((_, i) => (
             <motion.circle 
-              key={`visitor-${i}`}
+              key={`visitor-h-${i}`}
               r="4" 
-              fill="#ffffff" 
-              opacity="0.5"
-              initial={{ cx: 20, cy: 60 + (i * 20) }}
-              animate={{ cx: [20, 150, 200], cy: [60 + (i * 20), 100, 100], opacity: [0, 0.5, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.4, ease: "linear" }}
+              fill="white"
+              initial={{ cx: -20, cy: 100 + (Math.random() * 190 - 95), opacity: 0 }}
+              animate={{ 
+                cx: [0, 100, 200], 
+                cy: [100 + (Math.random() * 100 - 50), 100, 100], 
+                opacity: [0, 0.4, 0] 
+              }}
+              transition={{ duration: 3, repeat: Infinity, delay: i * 0.5, ease: "linear" }}
             />
           ))}
 
-          {/* Converted Leads (Stars) */}
-          {[...Array(3)].map((_, i) => (
+          {/* Leads (Stars exiting on right) */}
+          {[...Array(4)].map((_, i) => (
             <motion.path
-              key={`lead-${i}`}
+              key={`lead-h-${i}`}
               d="M 0 -5 L 1 -1.5 L 5 -1.5 L 2 1 L 3 5 L 0 2.5 L -3 5 L -2 1 L -5 -1.5 L -1 -1.5 Z"
               fill="#10b981"
               initial={{ x: 200, y: 100, scale: 0, opacity: 0 }}
-              animate={{ x: [200, 300, 380], y: [100, 90 + (i * 10), 80 + (i * 20)], scale: [0, 1.5, 1], opacity: [0, 1, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1 + i * 0.8, ease: "easeOut" }}
+              animate={{ 
+                x: [200, 300, 420], 
+                y: [100, 100 + (Math.random() * 20 - 10), 100 + (Math.random() * 40 - 20)], 
+                scale: [0, 1.2, 0.8], 
+                opacity: [0, 1, 0] 
+              }}
+              transition={{ duration: 3.5, repeat: Infinity, delay: 1.5 + i * 0.9, ease: "easeOut" }}
             />
           ))}
         </svg>
@@ -291,9 +316,9 @@ function ConversionFunnelVisual() {
           transition={{ delay: 0.6 }}
           className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-md"
         >
-          <div className="text-[10px] uppercase tracking-wider text-white/50 mb-1">Trust Signals</div>
-          <div className="w-full bg-white/10 rounded-full h-1.5 mt-2 overflow-hidden">
-            <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} transition={{ duration: 1, delay: 1 }} className="h-full bg-indigo-400 rounded-full" />
+          <div className="text-[10px] uppercase tracking-wider text-white/40 mb-1">Traffic Quality</div>
+          <div className="w-full bg-white/5 rounded-full h-1.5 mt-2 overflow-hidden">
+            <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} transition={{ duration: 1, delay: 1 }} className="h-full bg-violet-500 rounded-full" />
           </div>
         </motion.div>
         <motion.div 
@@ -302,7 +327,7 @@ function ConversionFunnelVisual() {
           transition={{ delay: 0.8 }}
           className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3 backdrop-blur-md"
         >
-          <div className="text-[10px] uppercase tracking-wider text-emerald-400/80 mb-1">Conversion Rate</div>
+          <div className="text-[10px] uppercase tracking-wider text-emerald-400 mb-1">Lead Conversion</div>
           <div className="text-xl font-bold text-emerald-400">+240%</div>
         </motion.div>
       </div>
@@ -417,7 +442,7 @@ export function AboutClient() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-xl pointer-events-none" />
               <ConversionFunnelVisual />
               
-              <div className="absolute -bottom-10 left-0 right-0 grid gap-3 sm:grid-cols-2 px-4 z-20">
+              {/* <div className="absolute -bottom-10 left-0 right-0 grid gap-3 sm:grid-cols-2 px-4 z-20">
                 {testimonialSnippets.map((item, i) => (
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -434,7 +459,7 @@ export function AboutClient() {
                     </p>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

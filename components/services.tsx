@@ -8,7 +8,7 @@ import { CountUp } from "@/components/ui/count-up"
    MINI VISUAL PREVIEWS  (inline SVG / JSX)
 ───────────────────────────────────────────── */
 
-function WebsitePreview() {
+export function WebsitePreview() {
   return (
     <div className="w-full h-full flex flex-col bg-[#0c0c18] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
       {/* Browser chrome */}
@@ -62,13 +62,13 @@ function WebsitePreview() {
   )
 }
 
-function SeoPreview() {
+export function SeoPreview({ isHome = true }: { isHome?: boolean }) {
   return (
     <div className="w-full h-full flex flex-col gap-3 p-3 items-center justify-center">
       {/* Search Bar */}
-      <div className="w-full max-w-[220px] bg-white/10 border border-white/20 rounded-full px-4 py-2 flex items-center gap-2">
+      <div className={`w-full max-w-[220px] ${!isHome ? "bg-muted border border-border" : "bg-white/5 border border-white/10"} rounded-full px-4 py-2 flex items-center gap-2`}>
         <span className="text-[12px]">🔍</span>
-        <span className="text-[10px] text-white/80 font-medium tracking-wide">best agency near me</span>
+        <span className={`text-[10px] ${!isHome ? "text-foreground/80" : "text-white/80"} font-medium tracking-wide`}>best agency near me</span>
       </div>
 
       {/* Search Result */}
@@ -77,37 +77,37 @@ function SeoPreview() {
           initial={{ x: -10, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="bg-cyan-500/20 border border-cyan-500/50 rounded-lg p-3 flex items-center justify-between"
+          className="bg-indigo-500/10 border border-indigo-500/30 rounded-lg p-3 flex items-center justify-between"
         >
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] font-bold text-white">Your Business</span>
-            <span className="text-[8px] text-cyan-200">www.yourwebsite.com</span>
+            <span className={`text-[11px] font-bold ${!isHome ? "text-foreground" : "text-white"}`}>Your Business</span>
+            <span className={`text-[8px] ${!isHome ? "text-indigo-600 dark:text-indigo-400" : "text-indigo-400"}`}>www.yourwebsite.com</span>
           </div>
-          <div className="bg-cyan-500 text-white text-[8px] font-black px-2 py-1 rounded uppercase tracking-widest">
+          <div className="bg-indigo-500 text-white text-[8px] font-black px-2 py-1 rounded uppercase tracking-widest">
             Rank #1
           </div>
         </motion.div>
 
         {/* Competitor */}
-        <div className="bg-white/5 border border-white/10 rounded-lg p-3 flex items-center justify-between opacity-50">
+        <div className={`${!isHome ? "bg-muted border border-border" : "bg-white/5 border border-white/10"} rounded-lg p-3 flex items-center justify-between opacity-50`}>
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] font-bold text-white/70">Competitor</span>
-            <span className="text-[8px] text-white/40">www.competitor.com</span>
+            <span className={`text-[11px] font-bold ${!isHome ? "text-foreground/70" : "text-white/70"}`}>Competitor</span>
+            <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>www.competitor.com</span>
           </div>
-          <span className="text-[8px] text-white/40 font-bold">#2</span>
+          <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"} font-bold`}>#2</span>
         </div>
       </div>
     </div>
   )
 }
 
-function GoogleBizPreview() {
+export function GoogleBizPreview({ isHome = true }: { isHome?: boolean }) {
   return (
     <div className="w-full h-full flex flex-col p-2 gap-2">
       {/* Google search bar */}
-      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15">
+      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${!isHome ? "bg-muted border border-border" : "bg-white/5 border border-white/10"}`}>
         <span className="text-[11px]">🔍</span>
-        <span className="text-[9px] text-white/70">plumber near me</span>
+        <span className={`text-[9px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>plumber near me</span>
         <div className="ml-auto flex items-center gap-0.5">
           <span className="text-[9px] font-bold" style={{color:"#4285F4"}}>G</span>
           <span className="text-[9px] font-bold" style={{color:"#EA4335"}}>o</span>
@@ -119,40 +119,40 @@ function GoogleBizPreview() {
       </div>
 
       {/* Knowledge Panel */}
-      <div className="flex-1 rounded-xl border border-white/12 bg-white/5 p-3 flex flex-col gap-2 overflow-hidden">
+      <div className={`flex-1 rounded-xl border ${!isHome ? "border-border bg-card" : "border-white/10 bg-white/5"} p-3 flex flex-col gap-2 overflow-hidden shadow-sm`}>
         {/* Business name + category */}
         <div>
-          <div className="text-[11px] font-bold text-white">Your Business Name</div>
-          <div className="text-[8px] text-white/50">Plumbing Service · Mumbai</div>
+          <div className={`text-[11px] font-bold ${!isHome ? "text-foreground" : "text-white"}`}>Your Business Name</div>
+          <div className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>Plumbing Service · Mumbai</div>
         </div>
 
         {/* Stars + reviews */}
         <div className="flex items-center gap-1">
-          <span className="text-[10px] font-bold text-orange-400">
+          <span className="text-[10px] font-bold text-orange-500">
             <CountUp to={4.9} decimals={1} duration={1.5} />
           </span>
           <div className="flex">
             {[1,2,3,4,5].map(s => (
-              <span key={s} className="text-yellow-400 text-[10px]">★</span>
+              <span key={s} className="text-yellow-500 text-[10px]">★</span>
             ))}
           </div>
-          <span className="text-[8px] text-white/40">(247)</span>
-          <span className="ml-auto text-[8px] text-green-400 font-semibold">Open now</span>
+          <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>(247)</span>
+          <span className={`ml-auto text-[8px] ${!isHome ? "text-green-600 dark:text-green-400" : "text-green-400"} font-semibold`}>Open now</span>
         </div>
 
         {/* Info rows */}
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-1.5">
             <span className="text-[9px]">📍</span>
-            <span className="text-[8px] text-white/50">123 Main St, Mumbai</span>
+            <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>123 Main St, Mumbai</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="text-[9px]">🕐</span>
-            <span className="text-[8px] text-white/50">Closes at 8:00 PM</span>
+            <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>Closes at 8:00 PM</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="text-[9px]">📞</span>
-            <span className="text-[8px] text-white/50">+91 98765 43210</span>
+            <span className={`text-[8px] ${!isHome ? "text-muted-foreground" : "text-white/40"}`}>+91 98765 43210</span>
           </div>
         </div>
 
@@ -160,24 +160,24 @@ function GoogleBizPreview() {
         <div className="flex gap-1.5 mt-auto">
           <motion.div
             whileHover={{ scale: 1.04 }}
-            className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg bg-orange-500/15 border border-orange-500/30 cursor-pointer"
+            className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20 cursor-pointer"
           >
             <span className="text-[10px]">📞</span>
-            <span className="text-[7px] text-orange-300 font-semibold">Call</span>
+            <span className={`text-[7px] ${!isHome ? "text-orange-600 dark:text-orange-400" : "text-orange-400"} font-semibold`}>Call</span>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.04 }}
-            className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg bg-blue-500/15 border border-blue-500/30 cursor-pointer"
+            className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 cursor-pointer"
           >
             <span className="text-[10px]">🗺️</span>
-            <span className="text-[7px] text-blue-300 font-semibold">Directions</span>
+            <span className={`text-[7px] ${!isHome ? "text-blue-600 dark:text-blue-400" : "text-blue-400"} font-semibold`}>Directions</span>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.04 }}
-            className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg bg-white/8 border border-white/15 cursor-pointer"
+            className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg ${!isHome ? "bg-muted border border-border" : "bg-white/5 border border-white/10"} cursor-pointer`}
           >
             <span className="text-[10px]">🌐</span>
-            <span className="text-[7px] text-white/50 font-semibold">Website</span>
+            <span className={`text-[7px] ${!isHome ? "text-foreground/60" : "text-white/60"} font-semibold`}>Website</span>
           </motion.div>
         </div>
       </div>
@@ -185,7 +185,7 @@ function GoogleBizPreview() {
   )
 }
 
-function WhatsAppPreview() {
+export function WhatsAppPreview() {
   const messages = [
     { from: "user", text: "I wanna order. 🍕" },
     { from: "bot", text: "Hey! 👋 Sure! Check our menu & place your order below." },
@@ -193,7 +193,7 @@ function WhatsAppPreview() {
     { from: "bot", text: "Got it! 🛵 Arriving in 30 mins. Track here 👇" },
   ]
   return (
-    <div className="w-full h-full flex flex-col rounded-xl overflow-hidden border border-white/10 bg-[#0d1117]">
+    <div className="w-full h-full flex flex-col rounded-xl overflow-hidden border border-white/10 bg-white/5 shadow-sm">
       {/* header */}
       <div className="flex items-center gap-2 px-3 py-2 bg-[#128C7E] shrink-0">
         <div className="w-5 h-5 rounded-full bg-white/30 flex items-center justify-center text-[8px] font-bold text-white">Y</div>
@@ -203,7 +203,7 @@ function WhatsAppPreview() {
         </div>
       </div>
       {/* chat */}
-      <div className="flex-1 px-2 py-2 flex flex-col gap-1.5 overflow-hidden bg-[#0a1628]/80">
+      <div className="flex-1 px-2 py-2 flex flex-col gap-1.5 overflow-hidden bg-black/20">
         {messages.map((m, i) => (
           <motion.div
             key={i}
@@ -212,7 +212,7 @@ function WhatsAppPreview() {
             transition={{ delay: i * 0.15 }}
             className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
           >
-            <div className={`max-w-[75%] px-2 py-1.5 rounded-xl text-[8px] leading-relaxed ${m.from === "user" ? "bg-[#128C7E] text-white rounded-tr-none" : "bg-[#1f2937] text-white/80 rounded-tl-none border border-white/10"}`}>
+            <div className={`max-w-[75%] px-2 py-1.5 rounded-xl text-[8px] leading-relaxed shadow-sm ${m.from === "user" ? "bg-[#128C7E] text-white rounded-tr-none" : "bg-white/10 text-white rounded-tl-none border border-white/10"}`}>
               {m.text}
             </div>
           </motion.div>
@@ -223,10 +223,10 @@ function WhatsAppPreview() {
           transition={{ repeat: Infinity, duration: 1.2 }}
           className="flex justify-start"
         >
-          <div className="bg-[#1f2937] border border-white/10 px-2.5 py-1.5 rounded-xl rounded-tl-none flex items-center gap-1">
-            <span className="w-1 h-1 rounded-full bg-white/50" />
-            <span className="w-1 h-1 rounded-full bg-white/50" />
-            <span className="w-1 h-1 rounded-full bg-white/50" />
+          <div className="bg-white/10 border border-white/10 px-2.5 py-1.5 rounded-xl rounded-tl-none flex items-center gap-1 shadow-sm">
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <span className="w-1 h-1 rounded-full bg-white/20" />
           </div>
         </motion.div>
       </div>
@@ -234,7 +234,7 @@ function WhatsAppPreview() {
   )
 }
 
-function ConversionPreview() {
+export function ConversionPreview() {
   return (
     <div className="w-full h-full flex items-center justify-center p-4">
       <div className="flex items-center gap-4 w-full max-w-[240px]">
@@ -243,12 +243,12 @@ function ConversionPreview() {
           <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center">
             <span className="text-2xl opacity-50">👥</span>
           </div>
-          <span className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Traffic</span>
+          <span className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Traffic</span>
         </div>
 
         {/* Arrow with animation */}
         <div className="flex flex-col items-center gap-1">
-          <span className="text-[10px] text-pink-400 font-bold bg-pink-500/20 px-2 py-0.5 rounded-full">CONVERTS</span>
+          <span className="text-[10px] text-pink-400 font-bold bg-pink-500/10 px-2 py-0.5 rounded-full">CONVERTS</span>
           <motion.div
             animate={{ x: [0, 5, 0] }}
             transition={{ repeat: Infinity, duration: 1 }}
@@ -258,7 +258,7 @@ function ConversionPreview() {
 
         {/* After */}
         <div className="flex flex-col items-center gap-2 flex-1">
-          <div className="w-16 h-16 bg-pink-500/20 border border-pink-500/50 rounded-full flex items-center justify-center relative">
+          <div className="w-16 h-16 bg-pink-500/10 border border-pink-500/30 rounded-full flex items-center justify-center relative">
             <div className="absolute inset-0 bg-pink-500/20 blur-md rounded-full" />
             <span className="text-2xl relative z-10">💰</span>
           </div>
@@ -269,50 +269,48 @@ function ConversionPreview() {
   )
 }
 
-function RedesignPreview() {
+export function RedesignPreview({ isHome = true }: { isHome?: boolean }) {
   return (
     <div className="w-full h-full flex gap-2 items-stretch">
       {/* Old */}
-      <div className="flex-1 rounded-xl border border-white/10 bg-white/5 overflow-hidden flex flex-col">
-        <div className="px-2 py-1 bg-white/5 border-b border-white/10">
-          <span className="text-[7px] text-white/30 uppercase tracking-widest">Before</span>
+      <div className={`flex-1 rounded-xl ${!isHome ? "border border-border bg-muted overflow-hidden" : "border-white/10 bg-white/5 overflow-hidden"} flex flex-col`}>
+        <div className={`px-2 py-1 ${!isHome ? "bg-muted border-b border-border" : "bg-white/5 border-b border-white/10"}`}>
+          <span className={`text-[7px] ${!isHome ? "text-muted-foreground" : "text-white/40"} uppercase tracking-widest`}>BEFORE</span>
         </div>
         <div className="flex-1 p-2 flex flex-col gap-1.5 opacity-50">
-          <div className="h-6 rounded bg-gray-500/30" />
-          <div className="h-2 w-full rounded bg-gray-500/20" />
-          <div className="h-2 w-3/4 rounded bg-gray-500/20" />
-          <div className="h-8 rounded bg-gray-500/20 mt-1" />
+          <div className={`h-6 rounded ${!isHome ? "bg-foreground/10" : "bg-white/10"}`} />
+          <div className={`h-2 w-full rounded ${!isHome ? "bg-foreground/5" : "bg-white/5"}`} />
+          <div className={`h-2 w-3/4 rounded ${!isHome ? "bg-foreground/5" : "bg-white/5"}`} />
+          <div className={`h-8 rounded ${!isHome ? "bg-foreground/5" : "bg-white/5"} mt-1`} />
           <div className="grid grid-cols-2 gap-1 flex-1">
-            <div className="rounded bg-gray-500/20" />
-            <div className="rounded bg-gray-500/20" />
+            <div className={`rounded ${!isHome ? "bg-foreground/5" : "bg-white/5"}`} />
+            <div className={`rounded ${!isHome ? "bg-foreground/5" : "bg-white/5"}`} />
           </div>
         </div>
       </div>
 
       {/* Arrow */}
       <div className="flex items-center shrink-0">
-        <div className="flex flex-col items-center gap-1">
-          <motion.div
-            animate={{ x: [0, 4, 0] }}
-            transition={{ repeat: Infinity, duration: 1.2 }}
-            className="text-violet-400 text-lg"
-          >→</motion.div>
-        </div>
+        <motion.div
+          animate={{ x: [0, 4, 0] }}
+          transition={{ repeat: Infinity, duration: 1.2 }}
+          className="text-violet-500 text-lg"
+        >→</motion.div>
       </div>
 
       {/* New */}
-      <div className="flex-1 rounded-xl border border-violet-500/30 bg-violet-500/5 overflow-hidden flex flex-col">
-        <div className="px-2 py-1 bg-violet-500/10 border-b border-violet-500/20">
-          <span className="text-[7px] text-violet-300 uppercase tracking-widest">After</span>
+      <div className="flex-1 rounded-xl border border-violet-500/30 bg-violet-500/5 overflow-hidden flex flex-col shadow-lg shadow-violet-500/10">
+        <div className="px-2 py-1 bg-violet-500/20 border-b border-violet-500/30">
+          <span className="text-[7px] text-violet-400 uppercase tracking-widest font-bold">AFTER</span>
         </div>
         <div className="flex-1 p-2 flex flex-col gap-1.5">
-          <div className="h-6 rounded bg-gradient-to-r from-violet-500/40 to-pink-500/30 border border-violet-500/20" />
-          <div className="h-2 w-full rounded bg-white/20" />
-          <div className="h-2 w-3/4 rounded bg-white/15" />
-          <div className="h-8 rounded bg-gradient-to-br from-violet-500/20 to-pink-500/10 border border-violet-500/20 mt-1" />
+          <div className="h-6 rounded bg-gradient-to-r from-violet-500/40 to-pink-500/30 border border-violet-500/30 shadow-[0_0_10px_rgba(139,92,246,0.2)]" />
+          <div className="h-2 w-full rounded bg-foreground/10" />
+          <div className="h-2 w-3/4 rounded bg-foreground/5" />
+          <div className="h-8 rounded bg-gradient-to-br from-violet-500/10 to-pink-500/5 border border-violet-500/20 mt-1" />
           <div className="grid grid-cols-2 gap-1 flex-1">
-            <div className="rounded bg-gradient-to-br from-violet-500/20 to-transparent border border-violet-500/20" />
-            <div className="rounded bg-gradient-to-br from-pink-500/20 to-transparent border border-pink-500/20" />
+            <div className="rounded bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20" />
+            <div className="rounded bg-gradient-to-br from-pink-500/10 to-transparent border border-pink-500/20" />
           </div>
         </div>
       </div>
@@ -416,7 +414,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       transition={{ delay: index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative rounded-3xl overflow-hidden border border-white/8 bg-[#0e0e1a]/80 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 ${
+      className={`relative rounded-3xl overflow-hidden border border-white/80 bg-[#0e0e1a]/80 backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 ${
         wide ? "flex flex-col md:flex-row" : "flex flex-col"
       } ${service.colSpan}`}
       style={{

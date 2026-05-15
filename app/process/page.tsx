@@ -53,7 +53,7 @@ function DiscoveryPreview() {
             <div className="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-lg">{node.icon}</span>
             </div>
-            <span className="text-[10px] text-white/50 font-medium tracking-wider uppercase">{node.label}</span>
+            <span className="text-[10px] text-white/40 font-medium tracking-wider uppercase">{node.label}</span>
           </motion.div>
         ))}
 
@@ -72,32 +72,32 @@ function DiscoveryPreview() {
 function DesignPreview() {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <div className="w-full max-w-[320px] rounded-xl border border-white/10 bg-[#1e1e1e] overflow-hidden flex flex-col shadow-2xl">
+      <div className="w-full max-w-[320px] rounded-xl border border-white/10 bg-[#0c0c18] overflow-hidden flex flex-col shadow-2xl">
         {/* Toolbar */}
-        <div className="h-6 bg-[#2d2d2d] border-b border-white/5 flex items-center px-2 gap-2">
+        <div className="h-6 bg-[#15152a] border-b border-white/10 flex items-center px-2 gap-2">
           <div className="flex gap-1.5">
             <span className="w-2 h-2 rounded-full bg-red-500/80" />
             <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
             <span className="w-2 h-2 rounded-full bg-green-500/80" />
           </div>
           <div className="ml-auto flex gap-2">
-            <span className="w-3 h-3 rounded-sm bg-white/10" />
-            <span className="w-3 h-3 rounded-sm bg-white/10" />
+            <span className="w-3 h-3 rounded-sm bg-white/5" />
+            <span className="w-3 h-3 rounded-sm bg-white/5" />
           </div>
         </div>
         
         {/* Canvas */}
-        <div className="flex-1 p-4 bg-[#121212] relative overflow-hidden flex items-center justify-center min-h-[160px]">
+        <div className="flex-1 p-4 bg-[#0c0c18] relative overflow-hidden flex items-center justify-center min-h-[160px]">
           {/* Wireframe Card */}
           <motion.div 
-            initial={{ borderRadius: "0px", backgroundColor: "#ffffff05" }}
-            animate={{ borderRadius: "16px", backgroundColor: "#ffffff10" }}
+            initial={{ borderRadius: "0px", backgroundColor: "rgba(255,255,255,0.05)" }}
+            animate={{ borderRadius: "16px", backgroundColor: "rgba(255,255,255,0.1)" }}
             transition={{ repeat: Infinity, duration: 3, repeatType: "reverse" }}
             className="w-48 h-32 border-2 border-violet-500/50 relative p-3 flex flex-col gap-3"
           >
             <div className="w-full h-10 bg-violet-500/20 rounded-lg" />
-            <div className="w-3/4 h-2 bg-white/20 rounded" />
-            <div className="w-1/2 h-2 bg-white/20 rounded" />
+            <div className="w-3/4 h-2 bg-white/10 rounded" />
+            <div className="w-1/2 h-2 bg-white/10 rounded" />
             <motion.div 
               animate={{ width: ["30%", "100%", "30%"] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -111,7 +111,7 @@ function DesignPreview() {
               className="absolute top-0 left-0 w-4 h-4 text-white z-20 pointer-events-none drop-shadow-lg"
               style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.5))" }}
             >
-              <svg viewBox="0 0 24 24" fill="white" stroke="black" strokeWidth="1">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="black" strokeWidth="1">
                 <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L5.5 3.21z" />
               </svg>
             </motion.div>
@@ -170,13 +170,14 @@ function TestingPreview() {
     <div className="w-full h-full flex items-center justify-center p-4">
       <div className="w-full max-w-[280px] flex flex-col gap-3">
         {/* Lighthouse Score Card */}
-        <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+        <div className="bg-[#15152a] border border-white/10 rounded-xl p-4 flex items-center gap-4 shadow-xl">
           <div className="relative w-16 h-16 flex items-center justify-center shrink-0">
             <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
               <path
                 d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 fill="none"
-                stroke="#1f2937"
+                stroke="currentColor"
+                className="text-muted"
                 strokeWidth="3"
               />
               <motion.path
@@ -191,7 +192,7 @@ function TestingPreview() {
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-xl font-bold text-emerald-400">100</span>
+              <span className="text-xl font-bold text-emerald-500">100</span>
             </div>
           </div>
           <div className="flex-1">
@@ -208,7 +209,7 @@ function TestingPreview() {
         </div>
 
         {/* Checklist */}
-        <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col gap-2">
+        <div className="bg-[#15152a] border border-white/10 rounded-xl p-3 flex flex-col gap-2">
           {[
             "Responsive Layout",
             "Cross-Browser QA",
@@ -283,9 +284,9 @@ function SupportPreview() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-4">
       {/* Uptime Widget */}
-      <div className="w-full max-w-[240px] bg-white/5 border border-white/10 rounded-xl p-3 flex items-center justify-between">
+      <div className="w-full max-w-[240px] bg-[#15152a] border border-white/10 rounded-xl p-3 flex items-center justify-between shadow-xl">
         <div className="flex flex-col">
-          <span className="text-[10px] text-white/50 font-semibold uppercase tracking-wider">System Status</span>
+          <span className="text-[10px] text-white/40 font-semibold uppercase tracking-wider">System Status</span>
           <span className="text-lg font-bold text-white">99.99%</span>
         </div>
         <div className="flex gap-1">
@@ -302,7 +303,7 @@ function SupportPreview() {
       </div>
 
       {/* Mini Chat */}
-      <div className="w-full max-w-[240px] bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col gap-2">
+      <div className="w-full max-w-[240px] bg-[#15152a] border border-white/10 rounded-xl p-3 flex flex-col gap-2 shadow-xl">
         <div className="flex gap-2 items-end">
           <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
             <span className="text-[10px]">🧑‍💻</span>
@@ -312,7 +313,7 @@ function SupportPreview() {
           </div>
         </div>
         <div className="flex gap-2 items-end justify-end">
-          <div className="bg-white/10 text-white/80 text-[9px] p-2 rounded-xl rounded-br-none border border-white/10">
+          <div className="bg-white/5 text-white/80 text-[9px] p-2 rounded-xl rounded-br-none border border-white/10">
             Awesome, thanks for monitoring!
           </div>
         </div>
@@ -436,7 +437,7 @@ function ProcessStep({
     <motion.div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex flex-col h-full rounded-3xl overflow-hidden border border-white/8 bg-[#0e0e1a]/80 backdrop-blur-md p-8 md:p-10 transition-all duration-500 hover:-translate-y-1.5"
+      className="relative flex flex-col h-full rounded-3xl overflow-hidden border border-border bg-[#0e0e1a]/80 backdrop-blur-md p-8 md:p-10 transition-all duration-500 hover:-translate-y-1.5"
       style={{
         boxShadow: hovered ? `0 0 0 1px ${step.accent}40, 0 20px 60px -10px ${step.accent}20` : "0 2px 20px rgba(0,0,0,0.4)",
       }}
@@ -455,7 +456,7 @@ function ProcessStep({
           {step.deliverables.map(item => (
             <li key={item} className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: step.accent }} />
-              <span className="text-sm text-white/70">{item}</span>
+              <span className="text-sm text-white/50">{item}</span>
             </li>
           ))}
         </ul>
@@ -467,7 +468,7 @@ function ProcessStep({
     <motion.div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex items-center justify-center h-full min-h-[300px] rounded-3xl overflow-hidden border border-white/8 bg-[#0e0e1a] backdrop-blur-md p-6 md:p-8 transition-all duration-500 hover:-translate-y-1.5"
+      className="relative flex items-center justify-center h-full min-h-[300px] rounded-3xl overflow-hidden border border-border bg-[#0c0c18] backdrop-blur-md p-6 md:p-8 transition-all duration-500 hover:-translate-y-1.5 shadow-sm"
       style={{
         boxShadow: hovered ? `0 0 0 1px ${step.accent}40` : "0 2px 20px rgba(0,0,0,0.4)",
       }}

@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Snail, EyeOff, Smartphone, MessageCircleOff, ShieldAlert, TrendingDown } from "lucide-react"
 import Link from "next/link"
@@ -76,17 +77,20 @@ const painPoints = [
   }
 ]
 
-// Floating particles for ambient effect
-const particles = Array.from({ length: 20 }, (_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  size: Math.random() * 3 + 1,
-  duration: Math.random() * 8 + 6,
-  delay: Math.random() * 4,
-}))
-
 export function WhyUs() {
+  const [particles, setParticles] = useState<any[]>([])
+
+  useEffect(() => {
+    setParticles(Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      duration: Math.random() * 8 + 6,
+      delay: Math.random() * 4,
+    })))
+  }, [])
+
   return (
     <section id="pain-points" className="relative pt-24 md:pt-32 pb-8 md:pb-12 bg-background overflow-hidden">
       {/* Background Orbs */}
@@ -196,14 +200,15 @@ export function WhyUs() {
           className="flex justify-center"
         >
           <MagneticButton>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-brand-indigo text-white hover:bg-brand-indigo/90 px-8 py-7 text-lg font-medium rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300"
-              >
+            <Button
+              asChild
+              size="lg"
+              className="bg-brand-indigo text-white hover:bg-brand-indigo/90 px-8 py-7 text-lg font-medium rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300"
+            >
+              <Link href="/contact">
                 Get Free Growth Audit
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </MagneticButton>
         </motion.div>
       </div>

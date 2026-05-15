@@ -7,7 +7,6 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { MagneticButton } from "@/components/ui/magnetic-button"
-import { TypingAnimation } from "@/components/ui/typing-animation"
 import { CountUp } from "@/components/ui/count-up"
 
 const trustChips = [
@@ -139,12 +138,12 @@ export function Hero() {
 
             <div className="grid grid-cols-2 gap-y-3 gap-x-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3 w-full">
               {trustChips.map((chip, i) => (
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.1 }}
                   key={chip} 
-                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
+                  className="flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
                 >
                   <CheckCircle2 className="w-4 h-4 text-brand-indigo" />
                   {chip}
@@ -160,15 +159,11 @@ export function Hero() {
               className="absolute inset-0"
             >
               {/* Main Dashboard Card */}
-              <motion.div 
-                animate={{ 
-                  x: mousePosition.x * 20,
-                  y: mousePosition.y * 20,
-                  rotateX: mousePosition.y * -5,
-                  rotateY: mousePosition.x * 5,
-                }}
-                transition={{ type: "spring", stiffness: 50, damping: 20 }}
-                className="absolute top-10 right-10 w-[450px] bg-card/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl"
+              <motion.div
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1, x: mousePosition.x * 20, y: mousePosition.y * 20, rotateX: mousePosition.y * -5, rotateY: mousePosition.x * 5 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="absolute top-10 right-10 w-[450px] bg-card/80 backdrop-blur-2xl border border-border rounded-3xl p-6 shadow-2xl"
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex gap-2">
@@ -221,13 +216,11 @@ export function Hero() {
               </motion.div>
 
               {/* Floating Element 1: WhatsApp Popup */}
-              <motion.div 
-                animate={{ 
-                  x: mousePosition.x * 40,
-                  y: mousePosition.y * 40 + Math.sin(Date.now() / 1000) * 10,
-                }}
-                transition={{ type: "spring", stiffness: 40, damping: 20 }}
-                className="absolute top-[14%] -left-10 bg-card/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex items-center gap-4 shadow-xl z-20"
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: mousePosition.x * 40, y: mousePosition.y * 40 + Math.sin(Date.now() / 1000) * 10 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="absolute top-[14%] -left-10 bg-card/90 backdrop-blur-xl border border-border rounded-2xl p-4 flex items-center gap-4 shadow-xl z-20"
               >
                 <div className="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center">
                   <MessageSquare className="w-6 h-6 text-[#25D366]" fill="#25D366" />
@@ -239,13 +232,11 @@ export function Hero() {
               </motion.div>
 
               {/* Floating Element 2: Performance Score */}
-              <motion.div 
-                animate={{ 
-                  x: mousePosition.x * -30,
-                  y: mousePosition.y * -30 + Math.cos(Date.now() / 1000) * 10,
-                }}
-                transition={{ type: "spring", stiffness: 30, damping: 15 }}
-                className="absolute bottom-20 right-0 bg-card/90 backdrop-blur-xl border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-2 shadow-xl z-20"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1, x: mousePosition.x * -30, y: mousePosition.y * -30 + Math.cos(Date.now() / 1000) * 10 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="absolute bottom-20 right-0 bg-card/90 backdrop-blur-xl border border-border rounded-2xl p-5 flex flex-col items-center gap-2 shadow-xl z-20"
               >
                 <div className="relative flex items-center justify-center">
                   <svg className="w-16 h-16 transform -rotate-90">
