@@ -42,11 +42,14 @@ function Button({
   size,
   asChild = false,
   pop = false,
+  shimmer,
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
     pop?: boolean
+  } & {
+    shimmer?: boolean
   }) {
   const Comp = asChild ? Slot : 'button'
 
@@ -55,7 +58,8 @@ function Button({
       data-slot="button"
       className={cn(
         buttonVariants({ variant, size, className }),
-        pop && "cta-pop-effect"
+        pop && "cta-pop-effect",
+        shimmer && "shimmer-effect"
       )}
       {...props}
     />

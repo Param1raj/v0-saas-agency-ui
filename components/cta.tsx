@@ -5,10 +5,12 @@ import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Image from "next/image"
 
-import { ContactSheet } from "./contact-sheet"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { MagneticButton } from "@/components/ui/magnetic-button"
 import { siteConfig } from "@/components/site-data"
+
+const ContactSheet = dynamic(() => import("./contact-sheet").then(mod => mod.ContactSheet), { ssr: false })
 
 export function CTA() {
   const [open, setOpen] = useState(false)
@@ -42,10 +44,10 @@ export function CTA() {
 
         <div className="relative max-w-5xl mx-auto px-6 text-center z-10">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-muted-foreground mb-8 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary mb-8 backdrop-blur-md"
           >
             <Sparkles className="w-4 h-4 text-brand-cyan" />
             <span className="text-sm font-medium tracking-wide">Free Growth Audit — No Commitment</span>

@@ -27,20 +27,22 @@ export function Footer() {
               Helping Local Businesses Grow Through Strategic Websites, Local SEO &amp; Digital Growth Systems.
             </p>
             <div className="flex gap-4">
-               <a 
-                 href={siteConfig.whatsappUrl} 
-                 target="_blank" 
-                 rel="noreferrer"
-                 className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider flex items-center gap-1"
-               >
-                 WhatsApp <ArrowUpRight className="w-3 h-3" />
-               </a>
-               <a 
-                 href={siteConfig.phoneHref} 
-                 className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider flex items-center gap-1"
-               >
-                 Call <ArrowUpRight className="w-3 h-3" />
-               </a>
+                <a 
+                  href={siteConfig.whatsappUrl} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  aria-label="Contact us on WhatsApp"
+                  className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider flex items-center gap-1"
+                >
+                  WhatsApp <ArrowUpRight className="w-3 h-3" />
+                </a>
+                <a 
+                  href={siteConfig.phoneHref} 
+                  aria-label="Call us"
+                  className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider flex items-center gap-1"
+                >
+                  Call <ArrowUpRight className="w-3 h-3" />
+                </a>
             </div>
           </div>
 
@@ -92,7 +94,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} HashiraDevs. All rights reserved.
           </p>
           <div className="flex gap-6">

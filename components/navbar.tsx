@@ -13,14 +13,16 @@ import { navLinks } from "@/components/site-data"
 import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export function Navbar() {
+  const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const { theme, resolvedTheme, setTheme } = useTheme()
 
-  const currentTheme = theme === "system" ? resolvedTheme : theme ?? "light"
+  const currentTheme = theme === "system" ? resolvedTheme : theme ?? "dark"
 
   useEffect(() => {
+    setMounted(true)
     const onScroll = () => setIsScrolled(window.scrollY > 20)
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
@@ -84,19 +86,20 @@ export function Navbar() {
                   className="rounded-full hover:bg-white/5 text-muted-foreground hover:text-foreground transition-colors"
                   aria-label="Toggle theme"
                 >
-                  {currentTheme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                  {mounted && currentTheme === "light" ? <Moon className="w-5 h-5" /> : mounted ? <Sun className="w-5 h-5" /> : <div className="w-5 h-5" />}
                 </Button>
 
                 <MagneticButton>
-                  <Link href="/contact">
-                    <Button
-                      size="default"
-                      pop={true}
-                      className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-medium px-6 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300"
-                    >
+                  <Button
+                    asChild
+                    size="default"
+                    pop={true}
+                    className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-medium px-6 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300"
+                  >
+                    <Link href="/contact">
                       Book Consultation
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </MagneticButton>
               </div>
             </div>
@@ -108,8 +111,9 @@ export function Navbar() {
                 size="icon"
                 onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
                 className="rounded-full text-muted-foreground"
+                aria-label="Toggle theme"
               >
-                {currentTheme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                {mounted && currentTheme === "light" ? <Moon className="w-5 h-5" /> : mounted ? <Sun className="w-5 h-5" /> : <div className="w-5 h-5" />}
               </Button>
               <button
                 className="text-foreground p-2 rounded-full hover:bg-white/5 transition-colors"
@@ -160,15 +164,16 @@ export function Navbar() {
               transition={{ delay: 0.3 }}
               className="mt-auto"
             >
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button
-                  size="lg"
-                  pop={true}
-                  className="w-full rounded-full bg-brand-indigo hover:bg-brand-indigo/90 text-white font-medium py-6 text-lg shadow-[0_0_30px_rgba(99,102,241,0.3)]"
-                >
+              <Button
+                asChild
+                size="lg"
+                pop={true}
+                className="w-full rounded-full bg-brand-indigo hover:bg-brand-indigo/90 text-white font-medium py-6 text-lg shadow-[0_0_30px_rgba(99,102,241,0.3)]"
+              >
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
                   Book Consultation
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </motion.div>
         )}

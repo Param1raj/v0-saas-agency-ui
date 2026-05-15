@@ -23,7 +23,7 @@ export const siteConfig = {
 } as const
 
 export const navLinks = [
-  // { href: "/services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
@@ -255,10 +255,10 @@ export const faqItems = [
 ]
 
 export const footerServiceLinks = [
-  { label: "Customer-Generating Websites", href: "#services" },
-  { label: "Local SEO Services", href: "#services" },
-  { label: "Google Maps Visibility", href: "#services" },
-  { label: "WhatsApp Lead Systems", href: "#services" },
+  { label: "Customer-Generating Websites", href: "/services/web-development" },
+  { label: "Local SEO Services", href: "/services/local-seo" },
+  { label: "Google Maps Visibility", href: "/services/google-business-optimization" },
+  { label: "WhatsApp Lead Systems", href: "/services/whatsapp-automation" },
 ]
 
 export const localBusinessDescription =
