@@ -94,7 +94,7 @@ export function CTA() {
               </Button>
             </MagneticButton>
             <a
-              href={"https://wa.me/+917818869663?text=Hi%20HashiraDevs%2C%20I%20want%20help%20growing%20my%20business%20online."}
+              href={siteConfig.whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 text-[#25D366] font-medium hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-300 text-base"

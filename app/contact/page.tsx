@@ -625,7 +625,7 @@ function Spotlight() {
 
                     {/* WhatsApp */}
                     <a 
-                      href="https://wa.me/+917818869663?text=Hi%20HashiraDevs%2C%20I%20want%20to%20discuss%20a%20project."
+                      href={`https://wa.me/${siteConfig.phoneHref.replace('tel:', '')}?text=Hi%20HashiraDevs%2C%20I%20want%20to%20discuss%20a%20project.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 group"
