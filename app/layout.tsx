@@ -126,14 +126,6 @@ const websiteSchema = {
   publisher: {
     '@id': `${siteConfig.domain}/#organization`,
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${siteConfig.domain}/?s={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 const breadcrumbSchema = {
@@ -157,8 +149,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="font-sans antialiased">
         <Script

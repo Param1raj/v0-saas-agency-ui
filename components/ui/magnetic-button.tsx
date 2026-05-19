@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, ReactNode } from "react"
+import { useRef, useState, useEffect, ReactNode } from "react"
 import { motion } from "framer-motion"
 
 interface MagneticButtonProps {
@@ -11,8 +11,18 @@ interface MagneticButtonProps {
 export function MagneticButton({ children, className = "" }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    const checkTouch = () => {
+      const hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0)
+      setIsTouch(hasTouch)
+    }
+    checkTouch()
+  }, [])
 
   const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouch) return
     const { clientX, clientY } = e
     const { height, width, left, top } = ref.current!.getBoundingClientRect()
     const middleX = clientX - (left + width / 2)
@@ -22,6 +32,14 @@ export function MagneticButton({ children, className = "" }: MagneticButtonProps
 
   const reset = () => {
     setPosition({ x: 0, y: 0 })
+  }
+
+  if (isTouch) {
+    return (
+      <div className={`relative ${className}`}>
+        {children}
+      </div>
+    )
   }
 
   return (

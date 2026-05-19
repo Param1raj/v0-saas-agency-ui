@@ -14,11 +14,11 @@ import {
 export const siteConfig = {
   name: "HashiraDevs",
   domain: "https://hashiradevs.com",
-  phoneDisplay: "+91 7818869663",
+  phoneDisplay: "+917818869663",
   phoneHref: "tel:+917818869663",
   whatsappUrl:
     "https://wa.me/+917818869663?text=Hi%20HashiraDevs%2C%20I%20want%20help%20growing%20my%20business%20online.",
-  email: "hashiradevs@hashiradevs.com",
+  email: "hello@hashiradevs.com",
   location: "Prabhat market, moradabad, 244001",
 } as const
 

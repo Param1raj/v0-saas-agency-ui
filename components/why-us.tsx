@@ -86,7 +86,8 @@ export function WhyUs() {
 
   const particles = mounted ? Array.from({ length: 12 }).map((_, i) => ({
     id: i,
-    initialX: (i * 8) % 100,
+    x: (i * 8) % 100,
+    y: (i * 12) % 100,
     duration: 15 + (i * 2) % 10,
     delay: i * 0.5,
     size: 2 + (i % 3),
