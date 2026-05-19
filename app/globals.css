@@ -91,6 +91,10 @@
   html {
     scroll-behavior: smooth;
   }
+
+  html.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
   body {
     @apply bg-background text-foreground;
   }

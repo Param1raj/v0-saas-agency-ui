@@ -18,6 +18,7 @@ import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { motion, AnimatePresence } from "framer-motion"
+import { siteConfig } from "@/components/site-data"
 
 function ContactHeroVisual() {
   return (
@@ -596,7 +597,7 @@ function Spotlight() {
                   <div className="space-y-5">
                     {/* Email */}
                     <a 
-                      href="mailto:hashiradevelopers@hashiradevs.com"
+                      href={`mailto:${siteConfig.email}`}
                       className="flex items-center gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-secondary/80 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-all duration-300 group-hover:scale-110">

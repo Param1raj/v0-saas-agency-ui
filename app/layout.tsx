@@ -126,14 +126,6 @@ const websiteSchema = {
   publisher: {
     '@id': `${siteConfig.domain}/#organization`,
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${siteConfig.domain}/?s={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 const breadcrumbSchema = {
