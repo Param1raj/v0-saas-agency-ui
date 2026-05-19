@@ -12,7 +12,7 @@ const metrics = [
 
 const logos = [
   "Money Roots", "Chinese Garden", "Dholera Real Estates", 
-  "Money Roots", "Chinese Garden", "Dholera Real Estates"
+  "Money Roots", "Chinese Garden", "Dholera Real Estates","Money Roots", "Chinese Garden",
 ]
 
 export function TrustStrip() {
