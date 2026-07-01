@@ -91,10 +91,7 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 The Challenge
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                The client needed a portfolio that did more than look good — it
-                had to communicate credibility, load quickly on all devices, and
-                guide visitors toward a clear next step. Their previous site
-                lacked structure and failed to convert traffic into inquiries.
+                {project.challenge}
               </p>
             </ScrollReveal>
           </div>
@@ -108,10 +105,7 @@ const CaseStudy = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 Our Approach
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                We focused on a clean, single-column layout with purposeful
-                whitespace, strong typographic hierarchy, and strategically
-                placed calls to action. Every section was designed to build
-                trust and reduce friction in the decision-making process.
+                {project.solution}
               </p>
             </ScrollReveal>
           </div>
