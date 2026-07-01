@@ -25,6 +25,7 @@ export async function POST(request: Request) {
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'HashiraDevs Contact <leads@hashiradevs.com>';
     const toEmail = process.env.RESEND_TO_EMAIL || 'charur7409@gmail.com';
 
+    // Just a comment
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
