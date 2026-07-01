@@ -1,4 +1,4 @@
-import { Award, ChartBar, ChartPie, Lock, Magnet, MapPinned, Puzzle, Smartphone, Utensils, Zap } from "lucide-react";
+import { Award, ChartBar, ChartPie, Clock, Lock, Magnet, MapPinned, MessageCircle, Puzzle, Smartphone, Utensils, Zap } from "lucide-react";
 
 const categories = ["All", "Web", "Mobile", "SaaS", "E-commerce"] as const
 type Category = (typeof categories)[number]
@@ -218,6 +218,138 @@ export const CaseStudies = [
             title: "Analytics Ready",
             desc: "Integrated tracking for user behavior and conversion insights.",
         },
+        ]
+    },
+    {
+        id: "ember-cafe",
+        title: "Ember Café landing page",
+        description: "A cozy specialty coffee sanctuary in Civil Lines, Moradabad, featuring a premium editorial layout and direct reservation funnel.",
+        technologies: ["☕️ Editorial layout & design", "📅 Seamless booking flow", "📱 Responsive space preview", "✨ Fluid micro-interactions"],
+        category: "Web" as Category,
+        gradient: "from-amber-900/20 via-amber-700/10 to-transparent",
+        accentColor: "group-hover:shadow-amber-950/20",
+        link: "/case-study/ember-cafe",
+        images: ["/ember-1.png", "/ember-2.png", "/ember-3.png", "/ember-4.png"],
+        challenge: "The client wanted to translate the quiet, cozy, and slow-paced physical ambiance of their specialty coffee shop in Moradabad into an elegant digital editorial experience that facilitates direct table reservations.",
+        solution: "We designed a premium minimalist landing page using warm coffee tones, sophisticated typography, and subtle scroll-triggered effects. We implemented an interactive menu preview, a horizontal workspace showcase, and a friction-free WhatsApp reservation flow.",
+        results: [
+            "Crafted a beautiful brand identity and modern web layout",
+            "Enabled seamless reservation requests directly to the cafe's WhatsApp",
+            "Significantly improved online menu discovery and space visualization"
+        ],
+        feedback: "The site's editorial feel perfectly captures what makes Ember special. The reservation flow has made it incredibly simple for weekend guests to book tables in advance.",
+        client: "Rohan M.",
+        position: "Founder & Lead",
+        liveLink: "https://ember-cafe-alpha.vercel.app/",
+        features: [
+            {
+                emoji: Utensils,
+                title: "Curated Menu Preview",
+                desc: "Showcases signature brass-filter brews, zafrani lattes, and shahi tukda French toast with premium hover interactions.",
+            },
+            {
+                emoji: Smartphone,
+                title: "Aesthetic Responsive Layout",
+                desc: "Fully optimized for smartphone visitors checking space details and availability on the move.",
+            },
+            {
+                emoji: MapPinned,
+                title: "Civil Lines Locator",
+                desc: "Integrated direction actions, timings, and map integration to easily locate the café near Town Hall.",
+            },
+            {
+                emoji: Zap,
+                title: "Smooth Animations",
+                desc: "Provides subtle transitions and high-engagement visuals that elevate brand trust.",
+            }
+        ]
+    },
+    {
+        id: "ghar-restaurant",
+        title: "Ghar — A Family Restaurant",
+        description: "A luxury heritage dining website for Moradabad's premier family restaurant, featuring timeline storytelling and custom occasion packages.",
+        technologies: ["🏰 Heritage storytelling", "🎂 Occasions package bookings", "🕰️ Interactive cooking timeline", "📞 WhatsApp hospitality integration"],
+        category: "Web" as Category,
+        gradient: "from-yellow-700/20 via-yellow-600/10 to-transparent",
+        accentColor: "group-hover:shadow-yellow-600/20",
+        link: "/case-study/ghar-restaurant",
+        images: ["/ghar-1.png", "/ghar-2.png", "/ghar-3.png", "/ghar-4.png"],
+        challenge: "With a 30-year legacy in Civil Lines, Ghar Restaurant needed to elevate its brand presence to match modern boutique standards while celebrating its historical place in Moradabad and driving package bookings.",
+        solution: "We engineered a heritage-inspired digital storefront emphasizing family legacy, traditional craftsmanship, and slow-cooking. We integrated a detailed celebration package booking structure and an interactive 36-hour slow-cooking timeline.",
+        results: [
+            "Successfully preserved and communicated Ghar's 30-year heritage online",
+            "Structured clear booking funnels for high-value family packages",
+            "Streamlined direct group reservation coordination via WhatsApp"
+        ],
+        feedback: "Ghar has been a fixture of Moradabad since 1994, and this website respects that heritage while introducing us to the next generation of patrons. The package booking flow works beautifully.",
+        client: "Rajeev Kapoor",
+        position: "Managing Director",
+        liveLink: "https://ghar-family-restaurant.vercel.app/",
+        features: [
+            {
+                emoji: Award,
+                title: "Anniversary & Milestone Packages",
+                desc: "Provides clear, structured options for hosting milestone birthdays and candlelight dinners with dedicated butler details.",
+            },
+            {
+                emoji: Clock,
+                title: "36-Hour Cooking Timeline",
+                desc: "Animates and highlights the stages of crafting the signature Dal Ghar from charcoal embers to churned butter finish.",
+            },
+            {
+                emoji: Utensils,
+                title: "Mughlai Platter Showcase",
+                desc: "Presents traditional recipes, kebabs, and paneer dishes with premium descriptions and price transparency.",
+            },
+            {
+                emoji: MapPinned,
+                title: "Civil Lines Location",
+                desc: "Clean details and map routes for their main road venue situated near the District Magistrate's residence.",
+            }
+        ]
+    },
+    {
+        id: "dum-dash-biryani",
+        title: "Dum Dash Biryani storefront",
+        description: "A high-converting local e-commerce platform for a premium dum biryani shop, driving commission-free direct WhatsApp orders.",
+        technologies: ["🛍️ Direct WhatsApp e-commerce", "🎠 3D plate-spinning carousel", "🌶️ Interactive menu category filters", "🔥 Daily specials checkout"],
+        category: "E-commerce" as Category,
+        gradient: "from-amber-600/20 via-yellow-500/10 to-transparent",
+        accentColor: "group-hover:shadow-amber-500/20",
+        link: "/case-study/dum-dash-biryani",
+        images: ["/dum-dash-ss-1.png", "/dum-dash-ss-2.png", "/dum-dash-ss-3.png", "/dum-dash-ss-4.png"],
+        challenge: "To increase profitability, Dum Dash Biryani wanted to shift online customer demand away from high-commission third-party delivery apps to a direct, fast ordering experience built around local cravings.",
+        solution: "We built a conversion-optimized dark-themed storefront featuring a unique 3D plate-spinning carousel, live filterable categories, a daily specials countdown banner, and direct WhatsApp-connected CTAs.",
+        results: [
+            "Cut out third-party delivery commission fees by routing customers to direct WhatsApp ordering",
+            "Delivered an incredibly immersive mobile-first visual experience",
+            "Enhanced ordering efficiency for family packs and chef-exclusive dishes"
+        ],
+        feedback: "The plate-spinning carousel is a huge hit on mobile, and the direct WhatsApp order templates make delivering food so much faster. It's a complete win for our business.",
+        client: "Chef Vikram Sharma",
+        position: "Founder & Head Khansama",
+        liveLink: "https://dum-dash-bryani.vercel.app/",
+        features: [
+            {
+                emoji: MessageCircle,
+                title: "WhatsApp Order Routing",
+                desc: "Transfers user selections into clean, pre-filled WhatsApp messages for seamless checkout.",
+            },
+            {
+                emoji: Zap,
+                title: "3D Interactive Plate Carousel",
+                desc: "An interactive menu display that lets users spin and select Chicken, Mutton, Veg, or Paneer Dum Biryanis.",
+            },
+            {
+                emoji: Award,
+                title: "Chef's Specials Promotion",
+                desc: "Features the limited daily 20 plates of Mutton Raan Biryani to create high urgency and interest.",
+            },
+            {
+                emoji: Smartphone,
+                title: "Mobile-First Ordering",
+                desc: "Optimized for speed and thumb-friendly checkout since over 80% of local delivery traffic comes from mobile.",
+            }
         ]
     }
 ]

@@ -149,10 +149,7 @@ export default function ContactPage() {
     setFormState("submitting")
 
     try {
-      // Formspree configuration - Replace with your form endpoint
-      const formspreeEndpoint = `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_FREE_ID}` // Get from Formspree
-
-      const response = await fetch(formspreeEndpoint, {
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
