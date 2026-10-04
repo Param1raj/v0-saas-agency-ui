@@ -20,5 +20,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   }
 
-  return [home, ...routes]
+  // Pages that are not in the main navigation
+  const extraRoutes = [
+    { path: '/startups', priority: 0.7 },
+    { path: '/privacy', priority: 0.3 },
+    { path: '/terms', priority: 0.3 },
+  ].map(({ path, priority }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority,
+  }))
+
+  return [home, ...routes, ...extraRoutes]
 }

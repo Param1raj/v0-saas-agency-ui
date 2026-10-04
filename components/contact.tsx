@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ReactNode } from "react"
 import { Send, CheckCircle2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -26,7 +26,62 @@ interface FormErrors {
   message?: string
 }
 
-export function Contact() {
+interface SelectOption {
+  value: string
+  label: string
+}
+
+const defaultProjectTypeOptions: SelectOption[] = [
+  { value: "web-app", label: "Web Application" },
+  { value: "mobile-app", label: "Mobile App" },
+  { value: "saas", label: "SaaS Platform" },
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "ui-ux", label: "UI/UX Design" },
+  { value: "consulting", label: "Consulting" },
+  { value: "other", label: "Other" },
+]
+
+const defaultBudgetOptions: SelectOption[] = [
+  { value: "10k-25k", label: "$10k - $25k" },
+  { value: "25k-50k", label: "$25k - $50k" },
+  { value: "50k-100k", label: "$50k - $100k" },
+  { value: "100k+", label: "$100k+" },
+  { value: "not-sure", label: "Not sure yet" },
+]
+
+const timelineOptions: SelectOption[] = [
+  { value: "asap", label: "ASAP" },
+  { value: "1-2-months", label: "1-2 months" },
+  { value: "3-6-months", label: "3-6 months" },
+  { value: "6-plus-months", label: "6+ months" },
+  { value: "flexible", label: "Flexible" },
+]
+
+interface ContactProps {
+  title?: string
+  description?: string
+  successMessage?: string
+  messagePlaceholder?: string
+  projectTypeOptions?: SelectOption[]
+  budgetOptions?: SelectOption[]
+  /** Sent to /api/send so leads can be told apart (e.g. "startups") */
+  source?: string
+  /** Rendered beside the form on large screens */
+  aside?: ReactNode
+  className?: string
+}
+
+export function Contact({
+  title = "Start Your Project",
+  description = "Tell us about your vision. We'll get back to you within 24 hours to discuss how we can bring it to life.",
+  successMessage = "Thank you for reaching out! We'll review your project details and get back to you within 24-48 hours.",
+  messagePlaceholder = "Tell us about your project, goals, and any specific requirements...",
+  projectTypeOptions = defaultProjectTypeOptions,
+  budgetOptions = defaultBudgetOptions,
+  source,
+  aside,
+  className = "absolute py-28 md:py-10",
+}: ContactProps = {}) {
   const [formState, setFormState] = useState<FormState>("idle")
   const [errors, setErrors] = useState<FormErrors>({})
   const [formData, setFormData] = useState({
@@ -95,6 +150,7 @@ export function Contact() {
           budgetRange: formData.budgetRange,
           timeline: formData.timeline,
           message: formData.message,
+          ...(source ? { source } : {}),
         }),
       })
 
@@ -139,7 +195,7 @@ export function Contact() {
 
   if (formState === "success") {
     return (
-      <section id="contact" className="relative py-28 md:py-36">
+      <section id="contact" className={cn("relative py-28 md:py-36", aside && "w-full")}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-150 h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="relative max-w-2xl mx-auto px-6 text-center">
@@ -151,7 +207,7 @@ export function Contact() {
               Message Sent Successfully
             </h3>
             <p className="text-muted-foreground mb-8">
-              Thank you for reaching out! We'll review your project details and get back to you within 24-48 hours.
+              {successMessage}
             </p>
             <Button
               onClick={() => setFormState("idle")}
@@ -167,24 +223,25 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="absolute py-28 md:py-10">
+    <section id="contact" className={className}>
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-200 h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="relative max-w-3xl mx-auto px-6">
+      <div className={cn("relative mx-auto px-6", aside ? "max-w-6xl" : "max-w-3xl")}>
         {/* Section Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 text-balance">
-            Start Your Project
+            {title}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg text-pretty leading-relaxed">
-            Tell us about your vision. We'll get back to you within 24 hours to discuss how we can bring it to life.
+            {description}
           </p>
         </div>
 
+        <div className={cn(aside && "grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start")}>
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="p-8 md:p-10 rounded-2xl border border-border/60 bg-card/30 backdrop-blur-sm">
+        <form onSubmit={handleSubmit} className="min-w-0 p-6 sm:p-8 md:p-10 rounded-2xl border border-border/60 bg-card/30 backdrop-blur-sm">
           {/* Error Banner */}
           {formState === "error" && (
             <div className="flex items-center gap-3 p-4 rounded-lg bg-destructive/10 border border-destructive/30 mb-8">
@@ -204,6 +261,7 @@ export function Contact() {
                 </FieldLabel>
                 <Input
                   placeholder="John Smith"
+                  maxLength={100}
                   value={formData.fullName}
                   onChange={(e) => handleInputChange("fullName", e.target.value)}
                   className={cn(inputClassName, errors.fullName && "border-destructive")}
@@ -218,6 +276,7 @@ export function Contact() {
                 <Input
                   type="email"
                   placeholder="john@company.com"
+                  maxLength={254}
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   className={cn(inputClassName, errors.email && "border-destructive")}
@@ -233,6 +292,7 @@ export function Contact() {
               </FieldLabel>
               <Input
                 placeholder="Your company name"
+                maxLength={120}
                 value={formData.company}
                 onChange={(e) => handleInputChange("company", e.target.value)}
                 className={inputClassName}
@@ -253,13 +313,9 @@ export function Contact() {
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="web-app">Web Application</SelectItem>
-                    <SelectItem value="mobile-app">Mobile App</SelectItem>
-                    <SelectItem value="saas">SaaS Platform</SelectItem>
-                    <SelectItem value="ecommerce">E-commerce</SelectItem>
-                    <SelectItem value="ui-ux">UI/UX Design</SelectItem>
-                    <SelectItem value="consulting">Consulting</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    {projectTypeOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 {errors.projectType && <FieldError>{errors.projectType}</FieldError>}
@@ -277,11 +333,9 @@ export function Contact() {
                     <SelectValue placeholder="Select budget" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="10k-25k">$10k - $25k</SelectItem>
-                    <SelectItem value="25k-50k">$25k - $50k</SelectItem>
-                    <SelectItem value="50k-100k">$50k - $100k</SelectItem>
-                    <SelectItem value="100k+">$100k+</SelectItem>
-                    <SelectItem value="not-sure">Not sure yet</SelectItem>
+                    {budgetOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 {errors.budgetRange && <FieldError>{errors.budgetRange}</FieldError>}
@@ -299,11 +353,9 @@ export function Contact() {
                     <SelectValue placeholder="Select timeline" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="asap">ASAP</SelectItem>
-                    <SelectItem value="1-2-months">1-2 months</SelectItem>
-                    <SelectItem value="3-6-months">3-6 months</SelectItem>
-                    <SelectItem value="6-plus-months">6+ months</SelectItem>
-                    <SelectItem value="flexible">Flexible</SelectItem>
+                    {timelineOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 {errors.timeline && <FieldError>{errors.timeline}</FieldError>}
@@ -316,7 +368,8 @@ export function Contact() {
                 Project Details <span className="text-destructive">*</span>
               </FieldLabel>
               <Textarea
-                placeholder="Tell us about your project, goals, and any specific requirements..."
+                placeholder={messagePlaceholder}
+                maxLength={5000}
                 value={formData.message}
                 onChange={(e) => handleInputChange("message", e.target.value)}
                 className={cn(
@@ -367,6 +420,8 @@ export function Contact() {
             </Button>
           </FieldGroup>
         </form>
+        {aside}
+        </div>
       </div>
     </section>
   )

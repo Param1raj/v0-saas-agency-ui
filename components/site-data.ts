@@ -50,8 +50,8 @@ export const heroStatHighlights = [
 ]
 
 export const trustMetrics = [
-  "42% more inquiries",
-  "3x increase in bookings",
+  "Built for more inquiries",
+  "Booking-ready pages",
   "Fast mobile optimization",
   "SEO-ready architecture",
 ]
