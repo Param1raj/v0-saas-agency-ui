@@ -1,10 +1,16 @@
 "use client"
 
 import { ArrowRight, MessageCircle, Phone } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 import { siteConfig } from "@/components/site-data"
 
 export function MobileCtaBar() {
+  const pathname = usePathname()
+
+  // The call/WhatsApp bar is aimed at local businesses; /startups has its own contact section
+  if (pathname?.startsWith("/startups")) return null
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/80 backdrop-blur-xl md:hidden pb-safe">
       <div className="grid grid-cols-4 gap-2 px-4 py-3">

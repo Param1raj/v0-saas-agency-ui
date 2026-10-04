@@ -61,6 +61,14 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/startups"
+                    className="text-sm text-muted-foreground hover:text-brand-cyan transition-colors"
+                  >
+                    For startups
+                  </Link>
+                </li>
               </ul>
             </div>
 
