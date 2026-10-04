@@ -1,4 +1,4 @@
-import { Award, ChartBar, ChartPie, Clock, Lock, Magnet, MapPinned, MessageCircle, Puzzle, Smartphone, Utensils, Zap } from "lucide-react";
+import { Award, ChartBar, ChartPie, Clock, CreditCard, Gift, KeyRound, Lock, Magnet, MapPinned, MessageCircle, MonitorSmartphone, Puzzle, Smartphone, Utensils, Video, Zap } from "lucide-react";
 
 const categories = ["All", "Web", "Mobile", "SaaS", "E-commerce"] as const
 type Category = (typeof categories)[number]
@@ -59,10 +59,13 @@ export const CaseStudies = [
         title: "Scalable E-Learning Platform",
          description: "A complete learning system built to deliver seamless video streaming, secure payments, and user progress tracking — optimized for engagement and growth.",
         technologies: [
-            "🎥 Smooth video streaming experience",
-            "🔐 Secure authentication & payments",
-            "📈 Built to scale with users",
-            "✨ Modern UI/UX design",
+            "Next.js 15",
+            "React 19",
+            "TypeScript",
+            "RTK Query",
+            "Razorpay",
+            "Amazon S3",
+            "Tailwind CSS / shadcn/ui",
         ],
         category: "SaaS" as Category,
         gradient: "from-emerald-600/20 via-teal-500/10 to-transparent",
@@ -82,34 +85,34 @@ export const CaseStudies = [
         liveLink: "https://moneyroots.in/",
         features: [
         {
-            emoji: Zap,
-            title: "Seamless Video Delivery",
-            desc: "Optimized video streaming experience",
+            emoji: Video,
+            title: "Video Streaming from Amazon S3",
+            desc: "Course videos are stored on Amazon S3 and played through next-video in the My Courses lesson player.",
         },
         {
-            emoji: Lock,
-            title: "Secure User & Payment System",
-            desc: "Pixel-perfect across all devices and screen sizes.",
+            emoji: CreditCard,
+            title: "Razorpay Checkout",
+            desc: "The backend creates each Razorpay order and verifies the payment signature on the server before course access is granted.",
         },
         {
-            emoji: ChartBar,
-            title: "Progress Tracking",
-            desc: "Structured markup and meta tags for better search visibility.",
+            emoji: KeyRound,
+            title: "OTP Sign-Up & Password Reset",
+            desc: "Sign-up is confirmed with an email OTP (with a resend timer), and users can reset a forgotten password or change their current one.",
+        },
+        {
+            emoji: MonitorSmartphone,
+            title: "Device-Limited Logins",
+            desc: "Each browser is identified with FingerprintJS. At the device limit, users see their active devices and can sign one out to continue.",
+        },
+        {
+            emoji: Gift,
+            title: "Referral & Affiliate Dashboard",
+            desc: "Every user gets a referral code and a dashboard listing their referrals and reward payouts, with bank details stored for payouts.",
         },
         {
             emoji: Smartphone,
-            title: "Mobile-Optimized Experience",
-            desc: "Reusable sections for easy content updates and scaling.",
-        },
-        {
-            emoji: Lock,
-            title: "Scalable Architecture",
-            desc: "Best practices for security headers and form handling.",
-        },
-        {
-            emoji: ChartPie,
-            title: "Analytics Ready",
-            desc: "Integrated tracking for user behavior and conversion insights.",
+            title: "Responsive UI",
+            desc: "Built with Tailwind CSS and shadcn/ui so the course catalogue, checkout and lesson player work on phones and desktops.",
         },
         ]
     },
