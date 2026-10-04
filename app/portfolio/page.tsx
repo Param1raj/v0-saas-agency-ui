@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Navbar } from "@/components/navbar"
@@ -35,6 +36,13 @@ export default function PortfolioPage() {
             A showcase of projects we have built for ambitious companies. 
             Each represents our commitment to quality, performance, and results.
           </p>
+          <Link
+            href="/startups"
+            className="group inline-flex items-center gap-1 mt-6 text-sm md:text-base font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            Hiring for a startup? See how I work with startup teams
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </section>
 
