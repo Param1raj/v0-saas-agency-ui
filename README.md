@@ -1,106 +1,114 @@
-# HashiraDevs - Premium Software Development Agency
+# HashiraDevs – Agency Website
 
-A professional, SEO-optimized website for HashiraDevs, a premium software development agency specializing in custom web applications, mobile apps, and SaaS platforms.
+The marketing website for **HashiraDevs**, a web development agency that builds websites, local SEO setups and WhatsApp lead funnels for local businesses.
 
-## 🚀 Features
+**Live site:** [hashiradevs.com](https://hashiradevs.com)
 
-- **SEO Optimized**: Comprehensive meta tags, structured data, sitemap, and robots.txt
-- **Professional Design**: Modern UI with shadcn/ui components and smooth animations
-- **Responsive**: Mobile-first design that works on all devices
-- **Performance**: Optimized images, CSS, and build configuration
-- **Contact Integration**: EmailJS integration for contact form submissions
-- **Trust Signals**: Testimonials, experience badges, and professional content
-
-## 🛠 Tech Stack
-
-- **Framework**: Next.js 16 with App Router
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Icons**: Lucide React
-- **Email**: EmailJS for contact form
-- **Analytics**: Vercel Analytics
-- **Deployment**: Optimized for Vercel
-
-## 📈 SEO Optimizations
-
-- Comprehensive meta tags (title, description, keywords, Open Graph, Twitter Cards)
-- JSON-LD structured data for organization and FAQ
-- Dynamic sitemap generation
-- Robots.txt configuration
-- Optimized images and performance
-- Semantic HTML and accessibility
-
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Param1raj/v0-saas-agency-ui.git
-   cd v0-saas-agency-ui
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
-
-3. **Set up contact form**
-   Create a free account at [Formspree](https://formspree.io/) and get your form endpoint
-
-4. **Run development server**
-   ```bash
-   pnpm dev
-   ```
-
-5. **Build for production**
-   ```bash
-   pnpm build
-   ```
-
-## 📧 Formspree Setup (Free Contact Form)
-
-1. Sign up at [Formspree](https://formspree.io/)
-2. Create a new form
-3. Get your form endpoint URL (looks like: `https://formspree.io/f/xxxxx`)
-4. Replace `'https://formspree.io/f/your_form_id'` in both contact forms with your actual endpoint
-5. Set up email notifications in your Formspree dashboard
-
-**Free Tier**: 50 submissions per month (perfect for small businesses)
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Configure your Formspree endpoint in the contact forms
-4. Deploy!
-
-### Other Platforms
-
-The app is optimized for any platform supporting Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-
-## 📊 Performance
-
-- Lighthouse scores: 95+ on all metrics
-- Optimized images with Next.js Image component
-- CSS optimization enabled
-- Compression enabled
-- Static generation for better SEO
-
-## 🎯 Target Audience
-
-- Startups looking for MVPs
-- Enterprises needing custom software
-- Businesses across healthcare, finance, e-commerce, and SaaS
-
-## 📞 Contact
-
-- **Email**: pr6587424@gmail.com
-- **Phone**: +91 781 886 9663
-- **GitHub**: https://github.com/Param1raj
+![HashiraDevs home page](docs/screenshots/home.jpg)
 
 ---
 
-Built with ❤️ using Next.js and shadcn/ui
+## What's on the site
+
+- **Home page** with hero, trust strip, services overview, industries served, work samples, process, testimonials, FAQ and call to action
+- **Service pages** for each offer, each with its own content and metadata:
+  - Web development (`/services/web-development`)
+  - Website redesign (`/services/website-redesign`)
+  - Local SEO (`/services/local-seo`)
+  - Google Business Profile optimization (`/services/google-business-optimization`)
+  - WhatsApp automation (`/services/whatsapp-automation`)
+- **Portfolio** with category filters (Web, Mobile, SaaS, E-commerce), and a **case study page** for each project generated from one data file (`/case-study/[slug]`). A link to a project without a case study entry shows a "case study coming soon" page instead of a 404.
+- **Process** and **About** pages
+- **Lead capture:**
+  - A contact form asking for project type, budget range and timeline. It posts to a Next.js route handler that emails the lead through the Resend API.
+  - A slide-in contact sheet, a floating WhatsApp button and a sticky call-to-action bar on mobile
+
+| Services | Portfolio | Mobile |
+|---|---|---|
+| ![Services](docs/screenshots/services.jpg) | ![Portfolio](docs/screenshots/portfolio.jpg) | ![Mobile home](docs/screenshots/home-mobile.jpg) |
+
+---
+
+## SEO
+
+- Page metadata (title, description, Open Graph, Twitter cards) on the home, about and service pages, with `metadataBase` set to the production domain
+- JSON-LD structured data in the root layout: `LocalBusiness` / `ProfessionalService` (with address, geo-coordinates, service area and an offer catalogue), `WebSite` and `BreadcrumbList`
+- `sitemap.ts` generated from the navigation config, plus `robots.ts`
+- One source of truth for business details (name, domain, phone, WhatsApp link, email, address) in `components/site-data.ts`, reused by the UI, metadata and structured data
+
+---
+
+## Tech stack
+
+| Area | Tools |
+|---|---|
+| Framework | Next.js 16 (App Router), React, TypeScript |
+| UI | Tailwind CSS, shadcn/ui (Radix UI), Lucide icons |
+| Motion | Framer Motion (scroll-reveal animations), Lenis smooth scrolling |
+| Theming | `next-themes` light/dark mode |
+| Email | Resend REST API from a route handler (`app/api/send`) |
+| Analytics | Vercel Analytics |
+| Hosting | Vercel |
+
+---
+
+## Project structure
+
+```
+app/
+├── page.tsx                  # Home
+├── services/                 # Services overview + one folder per service
+├── portfolio/                # Filterable project grid
+├── case-study/[slug]/        # Case study pages generated from constants/config.ts
+├── process/, about/, contact/
+├── api/send/route.ts         # Contact form → Resend
+├── layout.tsx                # Global metadata + JSON-LD
+├── sitemap.ts, robots.ts
+components/
+├── site-data.ts              # Business details and page copy
+├── hero.tsx, services.tsx, work.tsx, testimonials.tsx, faq.tsx …
+├── case-study/               # Case study sections and the "coming soon" view
+├── contact.tsx, contact-sheet.tsx, whatsapp-button.tsx, mobile-cta-bar.tsx
+└── ui/                       # shadcn/ui components
+constants/config.ts           # Portfolio and case study data
+```
+
+---
+
+## Getting started
+
+```bash
+git clone https://github.com/Param1raj/v0-saas-agency-ui.git
+cd v0-saas-agency-ui
+pnpm install
+cp .env.example .env.local   # then fill in the values
+pnpm dev                     # http://localhost:3000
+```
+
+### Environment variables
+
+| Variable | Used for |
+|---|---|
+| `RESEND_API_KEY` | Sending contact-form leads via Resend |
+| `RESEND_FROM_EMAIL` | Sender address (must be on a domain verified in Resend) |
+| `RESEND_TO_EMAIL` | Inbox that receives new leads |
+
+### Scripts
+
+| Command | Description |
+|---|---|
+| `pnpm dev` | Start the dev server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve the production build |
+| `pnpm lint` | Run ESLint |
+
+### Adding a project to the portfolio
+
+Add an entry to the array in `constants/config.ts` with a unique `id`. That `id` becomes the URL slug, so the case study appears at `/case-study/<id>` and in the portfolio grid without any other changes.
+
+---
+
+## Author
+
+Designed and built by **Param Raj**, Full Stack & AI Engineer.
+[LinkedIn](https://www.linkedin.com/in/param-raj-997aa41ba) · [GitHub](https://github.com/Param1raj)
