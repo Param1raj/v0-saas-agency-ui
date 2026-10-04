@@ -7,7 +7,6 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { MagneticButton } from "@/components/ui/magnetic-button"
-import { CountUp } from "@/components/ui/count-up"
 
 const trustChips = [
   "Local SEO Ready",
@@ -208,19 +207,19 @@ export function Hero() {
                     <div className="bg-white/5 rounded-2xl p-4 border border-white/5">
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <TrendingUp className="w-4 h-4 text-brand-cyan" />
-                        <span className="text-sm">Conversion Rate</span>
+                        <span className="text-sm">Conversions</span>
                       </div>
-                      <div className="text-3xl font-bold text-foreground">
-                        <CountUp to={8.4} decimals={1} suffix="%" duration={2.5} />
+                      <div className="text-xl font-bold text-foreground">
+                        More inquiries
                       </div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-4 border border-white/5">
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <Search className="w-4 h-4 text-brand-violet" />
-                        <span className="text-sm">Organic Traffic</span>
+                        <span className="text-sm">Search</span>
                       </div>
-                      <div className="text-3xl font-bold text-foreground">
-                        <CountUp to={142} prefix="+" suffix="%" duration={2.5} />
+                      <div className="text-xl font-bold text-foreground">
+                        Organic traffic ↑
                       </div>
                     </div>
                   </div>
@@ -284,13 +283,11 @@ export function Hero() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <div className="absolute text-xl font-bold text-green-500">
-                    <CountUp to={99} duration={1.5} />
-                  </div>
+                  <CheckCircle2 className="absolute w-6 h-6 text-green-500" />
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium text-foreground">
                   <Zap className="w-3 h-3 text-yellow-500" fill="currentColor" />
-                  Performance
+                  Fast load times
                 </div>
               </motion.div>
             </motion.div>
