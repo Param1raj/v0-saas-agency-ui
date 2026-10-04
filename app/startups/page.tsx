@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: pageUrl,
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: pageTitle,
     description: pageDescription,
@@ -324,7 +328,6 @@ export default function StartupsPage() {
                     >
                       Case study <ArrowRight className="w-4 h-4" />
                     </Link>
-                    <ExternalLink href="https://github.com/Param1raj/e-learning">Code</ExternalLink>
                   </div>
                 </div>
               </article>
@@ -334,7 +337,7 @@ export default function StartupsPage() {
             <ScrollReveal delay={0.1}>
               <article className="h-full flex flex-col rounded-2xl border border-border/60 bg-card/40 p-6 md:p-8 transition-all duration-500 hover:border-primary/30">
                 <p className="text-xs font-medium tracking-widest uppercase text-primary mb-3">
-                  Built in my current role
+                  AI workplace platform (confidential)
                 </p>
                 <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
                   Multi-tenant AI workplace platform
