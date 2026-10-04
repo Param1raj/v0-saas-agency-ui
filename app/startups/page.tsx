@@ -291,7 +291,7 @@ export default function StartupsPage() {
             {/* MoneyRoots */}
             <ScrollReveal>
               <article className="h-full flex flex-col rounded-2xl border border-border/60 bg-card/40 overflow-hidden transition-all duration-500 hover:border-primary/30">
-                <div className="relative h-56 sm:h-64 bg-secondary/40">
+                <div className="relative h-56 sm:h-64 lg:h-80 bg-secondary/40">
                   <Image
                     src="/elearning-1.png"
                     alt="MoneyRoots course catalogue"

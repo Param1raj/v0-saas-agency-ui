@@ -209,7 +209,7 @@ export function Hero() {
                         <TrendingUp className="w-4 h-4 text-brand-cyan" />
                         <span className="text-sm">Conversions</span>
                       </div>
-                      <div className="text-xl font-bold text-foreground">
+                      <div className="text-lg font-bold text-foreground whitespace-nowrap">
                         More inquiries
                       </div>
                     </div>
@@ -218,7 +218,7 @@ export function Hero() {
                         <Search className="w-4 h-4 text-brand-violet" />
                         <span className="text-sm">Search</span>
                       </div>
-                      <div className="text-xl font-bold text-foreground">
+                      <div className="text-lg font-bold text-foreground whitespace-nowrap">
                         Organic traffic ↑
                       </div>
                     </div>
